@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>打标签 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/82.82f8101f.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable router-link-active open"><span>2. Git 基础</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-2/1.html" class="sidebar-link">获取 Git 仓库</a></li><li><a href="/chapter-2/2.html" class="sidebar-link">记录每次更新到仓库</a></li><li><a href="/chapter-2/3.html" class="sidebar-link">查看提交历史</a></li><li><a href="/chapter-2/4.html" class="sidebar-link">撤消操作</a></li><li><a href="/chapter-2/5.html" class="sidebar-link">远程仓库的使用</a></li><li><a href="/chapter-2/6.html" class="active sidebar-link">打标签</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-2/6.html#列出标签" class="sidebar-link">列出标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#创建标签" class="sidebar-link">创建标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#附注标签" class="sidebar-link">附注标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#轻量标签" class="sidebar-link">轻量标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#后期打标签" class="sidebar-link">后期打标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#共享标签" class="sidebar-link">共享标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#删除标签" class="sidebar-link">删除标签</a></li><li class="sidebar-sub-header"><a href="/chapter-2/6.html#检出标签" class="sidebar-link">检出标签</a></li></ul></li><li><a href="/chapter-2/7.html" class="sidebar-link">Git 别名</a></li><li><a href="/chapter-2/8.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="打标签"><a href="#打标签" class="header-anchor">#</a> 打标签</h1> <p>
+像其他版本控制系统（VCS）一样，Git 可以给仓库历史中的某一个提交打上标签，以示重要。
+比较有代表性的是人们会使用这个功能来标记发布结点（ <code class="literal">v1.0</code> 、 <code class="literal">v2.0</code> 等等）。
+在本节中，你将会学习如何列出已有的标签、如何创建和删除新的标签、以及不同类型的标签分别是什么。</p> <h2 id="列出标签"><a href="#列出标签" class="header-anchor">#</a> 列出标签</h2> <p>在 Git 中列出已有的标签非常简单，只需要输入 <code class="literal">git tag</code>
+（可带上可选的 <code class="literal">-l</code> 选项 <code class="literal">--list</code>）：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag
+v1.0
+v2.0</code></pre> <p>这个命令以字母顺序列出标签，但是它们显示的顺序并不重要。</p> <p>你也可以按照特定的模式查找标签。
+例如，Git 自身的源代码仓库包含标签的数量超过 500 个。
+如果只对 1.8.5 系列感兴趣，可以运行：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag -l <span style="font-style:italic;">&quot;v1.8.5*&quot;</span>
+v1.8.5
+v1.8.5-rc0
+v1.8.5-rc1
+v1.8.5-rc2
+v1.8.5-rc3
+v1.8.5.1
+v1.8.5.2
+v1.8.5.3
+v1.8.5.4
+v1.8.5.5</code></pre> <aside title="Note: 按照通配符列出标签需要 -l 或 --list 选项" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <h2>按照通配符列出标签需要 <code class="literal">-l</code> 或 <code class="literal">--list</code> 选项</h2> <div class="content"><p>如果你只想要完整的标签列表，那么运行 <code class="literal">git tag</code> 就会默认假定你想要一个列表，它会直接给你列出来，
+此时的 <code class="literal">-l</code> 或 <code class="literal">--list</code> 是可选的。</p> <p>然而，如果你提供了一个匹配标签名的通配模式，那么 <code class="literal">-l</code> 或 <code class="literal">--list</code> 就是强制使用的。</p></div></aside> <h2 id="创建标签"><a href="#创建标签" class="header-anchor">#</a> 创建标签</h2> <p>Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）。</p> <p>轻量标签很像一个不会改变的分支——它只是某个特定提交的引用。</p> <p>而附注标签是存储在 Git 数据库中的一个完整对象，
+它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间，
+此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。
+通常会建议创建附注标签，这样你可以拥有以上所有信息。但是如果你只是想用一个临时的标签，
+或者因为某些原因不想要保存这些信息，那么也可以用轻量标签。</p> <h2 id="附注标签"><a href="#附注标签" class="header-anchor">#</a> 附注标签</h2> <p>
+在 Git 中创建附注标签十分简单。
+最简单的方式是当你在运行 <code class="literal">tag</code> 命令时指定 <code class="literal">-a</code> 选项：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag -a v1.4 -m <span style="font-style:italic;">&quot;my version 1.4&quot;</span>
+<span style="font-weight:bold;">$</span> git tag
+v0.1
+v1.3
+v1.4</code></pre> <p><code class="literal">-m</code> 选项指定了一条将会存储在标签中的信息。
+如果没有为附注标签指定一条信息，Git 会启动编辑器要求你输入信息。</p> <p>通过使用 <code class="literal">git show</code> 命令可以看到标签信息和与之对应的提交信息：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git show v1.4
+tag v1.4
+Tagger: Ben Straub &lt;ben@straub.cc&gt;
+Date:   Sat May 3 20:19:12 2014 -0700
+
+my version 1.4
+
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number</code></pre> <p>输出显示了打标签者的信息、打标签的日期时间、附注信息，然后显示具体的提交信息。</p> <h2 id="轻量标签"><a href="#轻量标签" class="header-anchor">#</a> 轻量标签</h2> <p>
+另一种给提交打标签的方式是使用轻量标签。
+轻量标签本质上是将提交校验和存储到一个文件中——没有保存任何其他信息。
+创建轻量标签，不需要使用 <code class="literal">-a</code>、<code class="literal">-s</code> 或 <code class="literal">-m</code> 选项，只需要提供标签名字：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag v1.4-lw
+<span style="font-weight:bold;">$</span> git tag
+v0.1
+v1.3
+v1.4
+v1.4-lw
+v1.5</code></pre> <p>这时，如果在标签上运行 <code class="literal">git show</code>，你不会看到额外的标签信息。
+命令只会显示出提交信息：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git show v1.4-lw
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number</code></pre> <h2 id="后期打标签"><a href="#后期打标签" class="header-anchor">#</a> 后期打标签</h2> <p>你也可以对过去的提交打标签。
+假设提交历史是这样的：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git log --pretty=oneline
+15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
+a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
+6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch 'experiment'
+0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
+4682c3261057305bdd616e23b64b0857d832627b added a todo file
+166ae0c4d3f420721acbb115cc33848dfcc2121a started write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme</code></pre> <p>现在，假设在 v1.2 时你忘记给项目打标签，也就是在 “updated rakefile” 提交。
+你可以在之后补上标签。
+要在那个提交上打标签，你需要在命令的末尾指定提交的校验和（或部分校验和）：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag -a v1.2 9fceb02</code></pre> <p>可以看到你已经在那次提交上打上标签了：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag
+v0.1
+v1.2
+v1.3
+v1.4
+v1.4-lw
+v1.5
+
+<span style="font-weight:bold;">$</span> git show v1.2
+tag v1.2
+Tagger: Scott Chacon &lt;schacon@gee-mail.com&gt;
+Date:   Mon Feb 9 15:32:16 2009 -0800
+
+version 1.2
+commit 9fceb02d0ae598e95dc970b74767f19372d61af8
+Author: Magnus Chacon &lt;mchacon@gee-mail.com&gt;
+Date:   Sun Apr 27 20:43:35 2008 -0700
+
+    updated rakefile
+...</code></pre> <h2 id="共享标签"><a href="#共享标签" class="header-anchor">#</a> 共享标签</h2> <p>默认情况下，<code class="literal">git push</code> 命令并不会传送标签到远程仓库服务器上。
+在创建完标签后你必须显式地推送标签到共享服务器上。
+这个过程就像共享远程分支一样——你可以运行 <code class="literal">git push origin &lt;tagname&gt;</code>。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin v1.5
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
+Total 14 (delta 3), reused 0 (delta 0)
+To git@github.com:schacon/simplegit.git
+ * [new tag]         v1.5 -&gt; v1.5</code></pre> <p>如果想要一次性推送很多标签，也可以使用带有 <code class="literal">--tags</code> 选项的 <code class="literal">git push</code> 命令。
+这将会把所有不在远程仓库服务器上的标签全部传送到那里。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 160 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To git@github.com:schacon/simplegit.git
+ * [new tag]         v1.4 -&gt; v1.4
+ * [new tag]         v1.4-lw -&gt; v1.4-lw</code></pre> <p>现在，当其他人从仓库中克隆或拉取，他们也能得到你的那些标签。</p> <aside title="Note: git push 推送两种标签" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <h2><code class="literal">git push</code> 推送两种标签</h2> <div class="content"><p>使用 <code class="literal">git push &lt;remote&gt; --tags</code> 推送标签并不会区分轻量标签和附注标签，
+没有简单的选项能够让你只选择推送一种标签。</p></div></aside> <h2 id="删除标签"><a href="#删除标签" class="header-anchor">#</a> 删除标签</h2> <p>要删除掉你本地仓库上的标签，可以使用命令 <code class="literal">git tag -d &lt;tagname&gt;</code>。
+例如，可以使用以下命令删除一个轻量标签：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git tag -d v1.4-lw
+Deleted tag 'v1.4-lw' (was e7d5add)</code></pre> <p>注意上述命令并不会从任何远程仓库中移除这个标签，你必须用
+<code class="literal">git push &lt;remote&gt; :refs/tags/&lt;tagname&gt;</code> 来更新你的远程仓库：</p> <p>第一种变体是 <code class="literal">git push &lt;remote&gt; :refs/tags/&lt;tagname&gt;</code> ：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin :refs/tags/v1.4-lw
+To /git@github.com:schacon/simplegit.git
+ - [deleted]         v1.4-lw</code></pre> <p>上面这种操作的含义是，将冒号前面的空值推送到远程标签名，从而高效地删除它。</p> <p>第二种更直观的删除远程标签的方式是：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin --delete &lt;tagname&gt;</code></pre> <h2 id="检出标签"><a href="#检出标签" class="header-anchor">#</a> 检出标签</h2> <p>如果你想查看某个标签所指向的文件版本，可以使用 <code class="literal">git checkout</code> 命令，
+虽然这会使你的仓库处于“分离头指针（detacthed HEAD）”的状态——这个状态有些不好的副作用：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout 2.0.0
+Note: checking out '2.0.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b &lt;new-branch&gt;
+
+HEAD is now at 99ada87... Merge pull request #89 from schacon/appendix-final
+
+<span style="font-weight:bold;">$</span> git checkout 2.0-beta-0.1
+Previous HEAD position was 99ada87... Merge pull request #89 from schacon/appendix-final
+HEAD is now at df3f601... add atlas.json and cover image</code></pre> <p>在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化，
+但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。
+因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout -b version2 v2.0.0
+Switched to a new branch 'version2'</code></pre> <p>如果在这之后又进行了一次提交，<code class="literal">version2</code> 分支就会因为这个改动向前移动，
+此时它就会和 <code class="literal">v2.0.0</code> 标签稍微有些不同，这时就要当心了。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-2/5.html" class="prev">
+        远程仓库的使用
+      </a></span> <span class="next"><a href="/chapter-2/7.html">
+        Git 别名
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/82.82f8101f.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>迁移到 Git | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/117.42a1b8c4.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable router-link-active open"><span>9. Git 与其他系统</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-9/1.html" class="sidebar-link">作为客户端的 Git</a></li><li><a href="/chapter-9/2.html" class="active sidebar-link">迁移到 Git</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-9/2.html#subversion" class="sidebar-link">Subversion</a></li><li class="sidebar-sub-header"><a href="/chapter-9/2.html#mercurial" class="sidebar-link">Mercurial</a></li><li class="sidebar-sub-header"><a href="/chapter-9/2.html#bazaar" class="sidebar-link">Bazaar</a></li><li class="sidebar-sub-header"><a href="/chapter-9/2.html#perforce" class="sidebar-link">Perforce</a></li><li class="sidebar-sub-header"><a href="/chapter-9/2.html#tfs" class="sidebar-link">TFS</a></li><li class="sidebar-sub-header"><a href="/chapter-9/2.html#一个自定义的导入器" class="sidebar-link">一个自定义的导入器</a></li></ul></li><li><a href="/chapter-9/3.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="迁移到-git"><a href="#迁移到-git" class="header-anchor">#</a> 迁移到 Git</h1> <p>
+如果你现在有一个正在使用其他 VCS 的代码库，但是你已经决定开始使用 Git，必须通过某种方式将你的项目迁移至 Git。
+这一部分会介绍一些通用系统的导入器，然后演示如何开发你自己定制的导入器。
+你将会学习如何从几个大型专业应用的 SCM 系统中导入数据，不仅因为它们是大多数想要转换的用户正在使用的系统，也因为获取针对它们的高质量工具很容易。</p> <h2 id="subversion"><a href="#subversion" class="header-anchor">#</a> Subversion</h2> <p></p><p>如果你阅读过前面关于 <code class="literal">git svn</code> 的章节，可以轻松地使用那些指令来 <code class="literal">git svn clone</code> 一个仓库，停止使用 Subversion 服务器，推送到一个新的 Git 服务器，然后就可以开始使用了。
+如果你想要历史，可以从 Subversion 服务器上尽可能快地拉取数据来完成这件事（这可能会花费一些时间）。</p> <p>然而，导入并不完美；因为花费太长时间了，你可能早已用其他方法完成导入操作。
+导入产生的第一个问题就是作者信息。
+在 Subversion 中，每一个人提交时都需要在系统中有一个用户，它会被记录在提交信息内。
+在之前章节的例子中几个地方显示了 <code class="literal">schacon</code>，比如 <code class="literal">blame</code> 输出与 <code class="literal">git svn log</code>。
+如果想要将上面的 Subversion 用户映射到一个更好的 Git 作者数据中，你需要一个 Subversion 用户到 Git 用户的映射。
+创建一个 <code class="literal">users.txt</code> 的文件包含像下面这种格式的映射：</p><p></p> <pre class="source language-"><code>schacon = Scott Chacon &lt;schacon@geemail.com&gt;
+selse = Someo Nelse &lt;selse@geemail.com&gt;</code></pre> <p>为了获得 SVN 使用的作者名字列表，可以运行这个：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> svn log --xml --quiet | grep author | sort -u | <span style="font-weight:bold;font-style:italic;">\</span>
+  perl -pe <span style="font-style:italic;">'s/.*&gt;(.*?)&lt;.*/$1 = /'</span></code></pre> <p>这会将日志输出为 XML 格式，然后保留作者信息行、去除重复、去除 XML 标记。
+很显然这只会在安装了 <code class="literal">grep</code>、<code class="literal">sort</code> 与 <code class="literal">perl</code> 的机器上运行。
+然后，将输出重定向到你的 <code class="literal">users.txt</code> 文件中，这样就可以在每一个记录后面加入对应的 Git 用户数据。</p> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>如果你在 Windows 上运行它，那么到这里就会遇到问题。微软提供了一些不错的建议和示例：
+<a href="https://docs.microsoft.com/en-us/azure/devops/repos/git/perform-migration-from-svn-to-git" class="link">https://docs.microsoft.com/en-us/azure/devops/repos/git/perform-migration-from-svn-to-git</a>.</p></div></aside> <p>你可以将此文件提供给 <code class="literal">git svn</code> 来帮助它更加精确地映射作者数据。
+也可以通过传递 <code class="literal">--no-metadata</code> 给 <code class="literal">clone</code> 与 <code class="literal">init</code> 命令，告诉 <code class="literal">git svn</code> 不要包括
+Subversion 通常会导入的元数据。在导入过程中，Git 会在每个提交说明的元数据中生成一个
+<code class="literal">git-svn-id</code>。</p> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>当你想要将 Git 仓库中的提交镜像回原 SVN 仓库中时，需要保留元数据。
+如果你不想在提交记录中同步它，请直接省略掉 <code class="literal">--no-metadata</code> 选项。</p></div></aside> <p>这会使你的 <code class="literal">import</code> 命令看起来像这样：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git svn clone http://my-project.googlecode.com/svn/ <span style="font-weight:bold;font-style:italic;">\</span>
+      --authors-file=users.txt --no-metadata --prefix <span style="font-style:italic;">&quot;&quot;</span> -s my_project
+<span style="font-weight:bold;">$</span> cd my_project</code></pre> <p>现在在 <code class="literal">my_project</code> 目录中应当有了一个更好的 Subversion 导入。
+并不像是下面这样的提交：</p> <pre class="source language-"><code>commit 37efa680e8473b615de980fa935944215428a35a
+Author: schacon &lt;schacon@4c93b258-373f-11de-be05-5f7a86268029&gt;
+Date:   Sun May 3 00:12:22 2009 +0000
+
+    fixed install - go to trunk
+
+    git-svn-id: https://my-project.googlecode.com/svn/trunk@94 4c93b258-373f-11de-
+    be05-5f7a86268029</code></pre> <p>反而它们看起来像是这样：</p> <pre class="source language-"><code>commit 03a8785f44c8ea5cdb0e8834b7c8e6c469be2ff2
+Author: Scott Chacon &lt;schacon@geemail.com&gt;
+Date:   Sun May 3 00:12:22 2009 +0000
+
+    fixed install - go to trunk</code></pre> <p>不仅是 Author 字段更好看了，<code class="literal">git-svn-id</code> 也不在了。</p> <p>之后，你应当做一些导入后的清理工作。
+第一步，你应当清理 <code class="literal">git svn</code> 设置的奇怪的引用。
+首先移动标签，这样它们就是标签而不是奇怪的远程引用，然后你会移动剩余的分支这样它们就是本地的了。</p> <p>为了将标签变为合适的 Git 标签，运行：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> <span style="font-weight:bold;">for</span> t in <span style="font-weight:bold;">$(</span>git <span style="font-weight:bold;">for</span>-each-ref --format=<span style="font-style:italic;">'%(refname:short)'</span> refs/remotes/tags<span style="font-weight:bold;">)</span>; <span style="font-weight:bold;">do</span> git tag <span style="font-weight:bold;font-style:italic;">${</span>t/tags<span style="font-weight:bold;font-style:italic;">\/</span>/<span style="font-weight:bold;font-style:italic;">}</span> $t &amp;&amp; git branch -D -r $t; <span style="font-weight:bold;">done</span></code></pre> <p>这会使原来在 <code class="literal">refs/remotes/tags/</code> 里的远程分支引用变成真正的（轻量）标签。</p> <p>接下来，将 <code class="literal">refs/remotes</code> 下剩余的引用移动为本地分支：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> <span style="font-weight:bold;">for</span> b in <span style="font-weight:bold;">$(</span>git <span style="font-weight:bold;">for</span>-each-ref --format=<span style="font-style:italic;">'%(refname:short)'</span> refs/remotes<span style="font-weight:bold;">)</span>; <span style="font-weight:bold;">do</span> git branch $b refs/remotes/$b &amp;&amp; git branch -D -r $b; <span style="font-weight:bold;">done</span></code></pre> <p>It may happen that you’ll see some extra branches which are suffixed by <code class="literal">@xxx</code> (where xxx is a number), while in Subversion you only see one branch.
+This is actually a Subversion feature called “peg-revisions”, which is something that Git simply has no syntactical counterpart for.
+Hence, <code class="literal">git svn</code> simply adds the svn version number to the branch name just in the same way as you would have written it in svn to address the peg-revision of that branch.
+If you do not care anymore about the peg-revisions, simply remove them:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> <span style="font-weight:bold;">for</span> p in <span style="font-weight:bold;">$(</span>git <span style="font-weight:bold;">for</span>-each-ref --format=<span style="font-style:italic;">'%(refname:short)'</span> | grep @<span style="font-weight:bold;">)</span>; <span style="font-weight:bold;">do</span> git branch -D $p; <span style="font-weight:bold;">done</span></code></pre> <p>现在所有的旧分支都是真正的 Git 分支，并且所有的旧标签都是真正的 Git 标签。</p> <p>还有最后一点东西需要清理。<code class="literal">git svn</code> 会创建一个名为 <code class="literal">trunk</code> 的额外分支，它对应于
+Subversion 的默认分支，然而 <code class="literal">trunk</code> 引用和 <code class="literal">master</code> 指向同一个位置。
+鉴于在 Git 中 <code class="literal">master</code> 最为常用，因此我们可以移除额外的分支：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git branch -d trunk</code></pre> <p>最后一件要做的事情是，将你的新 Git 服务器添加为远程仓库并推送到上面。
+下面是一个将你的服务器添加为远程仓库的例子：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git remote add origin git@my-git-server:myrepository.git</code></pre> <p>因为想要上传所有分支与标签，你现在可以运行：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin --all
+<span style="font-weight:bold;">$</span> git push origin --tags</code></pre> <p>通过以上漂亮、干净地导入操作，你的所有分支与标签都应该在新 Git 服务器上。</p> <h2 id="mercurial"><a href="#mercurial" class="header-anchor">#</a> Mercurial</h2> <p>
+因为 Mercurial 与 Git 在表示版本时有着非常相似的模型，也因为 Git 拥有更加强大的灵活性，将一个仓库从 Mercurial 转换到 Git 是相当直接的，使用一个叫作“hg-fast-export”的工具，需要从这里拷贝一份：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git clone https://github.com/frej/fast-export.git</code></pre> <p>转换的第一步就是要先得到想要转换的 Mercurial 仓库的完整克隆：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> hg clone &lt;remote repo URL&gt; /tmp/hg-repo</code></pre> <p>下一步就是创建一个作者映射文件。
+Mercurial 对放入到变更集作者字段的内容比 Git 更宽容一些，所以这是一个清理的好机会。
+只需要用到 <code class="literal">bash</code> 终端下的一行命令：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> cd /tmp/hg-repo
+<span style="font-weight:bold;">$</span> hg log | grep user: | sort | uniq | sed <span style="font-style:italic;">'s/user: *//'</span> &gt; ../authors</code></pre> <p>这会花费几秒钟，具体要看项目提交历史有多少，最终 <code class="literal">/tmp/authors</code> 文件看起来会像这样：</p> <pre class="source language-"><code>bob
+bob@localhost
+bob &lt;bob@company.com&gt;
+bob jones &lt;bob &lt;AT&gt; company &lt;DOT&gt; com&gt;
+Bob Jones &lt;bob@company.com&gt;
+Joe Smith &lt;joe@company.com&gt;</code></pre> <p>在这个例子中，同一个人（Bob）使用不同的名字创建变更集，其中一个实际上是正确的，
+另一个完全不符合 Git 提交的规范。hg-fast-export 通过对每一行应用规则
+<code class="literal">&quot;&lt;input&gt;&quot;=&quot;&lt;output&gt;&quot;</code> ，将 <code class="literal">&lt;input&gt;</code> 映射到 <code class="literal">&lt;output&gt;</code> 来修正这个问题。
+在 <code class="literal">&lt;input&gt;</code> 和 <code class="literal">&lt;output&gt;</code> 字符串中，所有 Python 的 <code class="literal">string_escape</code>
+支持的转义序列都会被解释。如果作者映射文件中并不包含匹配的 <code class="literal">&lt;input&gt;</code>，
+那么该作者将原封不动地被发送到 Git。
+如果所有的用户名看起来都是正确的，那我们根本就不需要这个文件。
+在本例中，我们会使文件看起来像这样：</p> <pre class="source language-"><code>&quot;bob&quot;=&quot;Bob Jones &lt;bob@company.com&gt;&quot;
+&quot;bob@localhost&quot;=&quot;Bob Jones &lt;bob@company.com&gt;&quot;
+&quot;bob &lt;bob@company.com&gt;&quot;=&quot;Bob Jones &lt;bob@company.com&gt;&quot;
+&quot;bob jones &lt;bob &lt;AT&gt; company &lt;DOT&gt; com&gt;&quot;=&quot;Bob Jones &lt;bob@company.com&gt;&quot;</code></pre> <p>当分支和标签 Mercurial 中的名字在 Git 中不允许时，这种映射文件也可以用来重命名它们。</p> <p>下一步是创建一个新的 Git 仓库，然后运行导出脚本：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git init /tmp/converted
+<span style="font-weight:bold;">$</span> cd /tmp/converted
+<span style="font-weight:bold;">$</span> /tmp/fast-export/hg-fast-export.sh -r /tmp/hg-repo -A /tmp/authors</code></pre> <p><code class="literal">-r</code> 选项告诉 hg-fast-export 去哪里寻找我们想要转换的 Mercurial 仓库，<code class="literal">-A</code>
+标记告诉它在哪找到作者映射文件（分支和标签的映射文件分别通过 <code class="literal">-B</code> 和 <code class="literal">-T</code> 选项来指定）。
+这个脚本会分析 Mercurial 变更集然后将它们转换成 Git“fast-import”功能（我们将在之后详细讨论）需要的脚本。
+这会花一点时间（尽管它比通过网格 <em>更</em> 快），输出相当的冗长：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> /tmp/fast-export/hg-fast-export.sh -r /tmp/hg-repo -A /tmp/authors
+Loaded 4 authors
+master: Exporting full revision 1/22208 with 13/0/0 added/changed/removed files
+master: Exporting simple delta revision 2/22208 with 1/1/0 added/changed/removed files
+master: Exporting simple delta revision 3/22208 with 0/1/0 added/changed/removed files
+[…]
+master: Exporting simple delta revision 22206/22208 with 0/4/0 added/changed/removed files
+master: Exporting simple delta revision 22207/22208 with 0/2/0 added/changed/removed files
+master: Exporting thorough delta revision 22208/22208 with 3/213/0 added/changed/removed files
+Exporting tag [0.4c] at [hg r9] [git :10]
+Exporting tag [0.4d] at [hg r16] [git :17]
+[…]
+Exporting tag [3.1-rc] at [hg r21926] [git :21927]
+Exporting tag [3.1] at [hg r21973] [git :21974]
+Issued 22315 commands
+git-fast-import statistics:
+---------------------------------------------------------------------
+Alloc'd objects:     120000
+Total objects:       115032 (    208171 duplicates                  )
+      blobs  :        40504 (    205320 duplicates      26117 deltas of      39602 attempts)
+      trees  :        52320 (      2851 duplicates      47467 deltas of      47599 attempts)
+      commits:        22208 (         0 duplicates          0 deltas of          0 attempts)
+      tags   :            0 (         0 duplicates          0 deltas of          0 attempts)
+Total branches:         109 (         2 loads     )
+      marks:        1048576 (     22208 unique    )
+      atoms:           1952
+Memory total:          7860 KiB
+       pools:          2235 KiB
+     objects:          5625 KiB
+---------------------------------------------------------------------
+pack_report: getpagesize()            =       4096
+pack_report: core.packedGitWindowSize = 1073741824
+pack_report: core.packedGitLimit      = 8589934592
+pack_report: pack_used_ctr            =      90430
+pack_report: pack_mmap_calls          =      46771
+pack_report: pack_open_windows        =          1 /          1
+pack_report: pack_mapped              =  340852700 /  340852700
+---------------------------------------------------------------------
+
+<span style="font-weight:bold;">$</span> git shortlog -sn
+   369  Bob Jones
+   365  Joe Smith</code></pre> <p>那看起来非常好。
+所有 Mercurial 标签都已被转换成 Git 标签，Mercurial 分支与书签都被转换成 Git 分支。
+现在已经准备好将仓库推送到新的服务器那边：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git remote add origin git@my-git-server:myrepository.git
+<span style="font-weight:bold;">$</span> git push origin --all</code></pre> <h2 id="bazaar"><a href="#bazaar" class="header-anchor">#</a> Bazaar</h2> <p></p> <p>Bazaar is a DVCS tool much like Git, and as a result it’s pretty straightforward to convert a Bazaar repository into a Git one.
+To accomplish this, you’ll need to import the <code class="literal">bzr-fastimport</code> plugin.</p> <h3 id="getting-the-bzr-fastimport-plugin"><a href="#getting-the-bzr-fastimport-plugin" class="header-anchor">#</a> Getting the bzr-fastimport plugin</h3> <p>The procedure for installing the fastimport plugin is different on UNIX-like operating systems and on Windows.
+In the first case, the simplest is to install the <code class="literal">bzr-fastimport</code> package that will install all the required dependencies.</p> <p>For example, with Debian and derived, you would do the following:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> sudo apt-get install bzr-fastimport</code></pre> <p>With RHEL, you would do the following:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> sudo yum install bzr-fastimport</code></pre> <p>With Fedora, since release 22, the new package manager is dnf:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> sudo dnf install bzr-fastimport</code></pre> <p>If the package is not available, you may install it as a plugin:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> mkdir --parents ~/.bazaar/plugins     <span style="font-style:italic;"># creates the necessary folders for the plugins</span>
+<span style="font-weight:bold;">$</span> cd ~/.bazaar/plugins
+<span style="font-weight:bold;">$</span> bzr branch lp:bzr-fastimport fastimport   <span style="font-style:italic;"># imports the fastimport plugin</span>
+<span style="font-weight:bold;">$</span> cd fastimport
+<span style="font-weight:bold;">$</span> sudo python setup.py install --record=files.txt   <span style="font-style:italic;"># installs the plugin</span></code></pre> <p>For this plugin to work, you’ll also need the <code class="literal">fastimport</code> Python module.
+You can check whether it is present or not and install it with the following commands:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> python -c <span style="font-style:italic;">&quot;import fastimport&quot;</span>
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+ImportError: No module named fastimport
+<span style="font-weight:bold;">$</span> pip install fastimport</code></pre> <p>If it is not available, you can download it at address <a href="https://pypi.python.org/pypi/fastimport/" class="link">https://pypi.python.org/pypi/fastimport/</a>.</p> <p>In the second case (on Windows), <code class="literal">bzr-fastimport</code> is automatically installed with the standalone version and the default installation (let all the checkboxes checked).
+So in this case you have nothing to do.</p> <p>At this point, the way to import a Bazaar repository differs according to that you have a single branch or you are working with a repository that has several branches.</p> <h3 id="project-with-a-single-branch"><a href="#project-with-a-single-branch" class="header-anchor">#</a> Project with a single branch</h3> <p>Now <code class="literal">cd</code> in the directory that contains your Bazaar repository and initialize the Git repository:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> cd /path/to/the/bzr/repository
+<span style="font-weight:bold;">$</span> git init</code></pre> <p>Now, you can simply export your Bazaar repository and convert it into a Git repository using the following command:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> bzr fast-export --plain . | git fast-import</code></pre> <p>Depending on the size of the project, your Git repository is built in a lapse from a few seconds to a few minutes.</p> <h3 id="case-of-a-project-with-a-main-branch-and-a-working-branch"><a href="#case-of-a-project-with-a-main-branch-and-a-working-branch" class="header-anchor">#</a> Case of a project with a main branch and a working branch</h3> <p>You can also import a Bazaar repository that contains branches.
+Let us suppose that you have two branches: one represents the main branch (myProject.trunk), the other one is the working branch (myProject.work).</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> ls
+myProject.trunk myProject.work</code></pre> <p>Create the Git repository and <code class="literal">cd</code> into it:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git init git-repo
+<span style="font-weight:bold;">$</span> cd git-repo</code></pre> <p>Pull the <code class="literal">master</code> branch into git:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> bzr fast-export --export-marks=../marks.bzr ../myProject.trunk | <span style="font-weight:bold;font-style:italic;">\</span>
+git fast-import --export-marks=../marks.git</code></pre> <p>Pull the working branch into Git:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> bzr fast-export --marks=../marks.bzr --git-branch=work ../myProject.work | <span style="font-weight:bold;font-style:italic;">\</span>
+git fast-import --import-marks=../marks.git --export-marks=../marks.git</code></pre> <p>Now <code class="literal">git branch</code> shows you the <code class="literal">master</code> branch as well as the <code class="literal">work</code> branch.
+Check the logs to make sure they’re complete and get rid of the <code class="literal">marks.bzr</code> and <code class="literal">marks.git</code> files.</p> <h3 id="synchronizing-the-staging-area"><a href="#synchronizing-the-staging-area" class="header-anchor">#</a> Synchronizing the staging area</h3> <p>Whatever the number of branches you had and the import method you used, your staging area is not synchronized with <code class="literal">HEAD</code>, and with the import of several branches, your working directory is not synchronized either.
+This situation is easily solved by the following command:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git reset --hard HEAD</code></pre> <h3 id="ignoring-the-files-that-were-ignored-with-bzrignore"><a href="#ignoring-the-files-that-were-ignored-with-bzrignore" class="header-anchor">#</a> Ignoring the files that were ignored with .bzrignore</h3> <p>Now let’s have a look at the files to ignore.
+The first thing to do is to rename <code class="literal">.bzrignore</code> into <code class="literal">.gitignore</code>.
+If the <code class="literal">.bzrignore</code> file contains one or several lines starting with &quot;!!&quot; or &quot;RE:&quot;, you’ll have to modify it and perhaps create several <code class="literal">.gitignore</code> files in order to ignore exactly the same files that Bazaar was ignoring.</p> <p>Finally, you will have to create a commit that contains this modification for the migration:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git mv .bzrignore .gitignore
+<span style="font-weight:bold;">$</span> <span style="font-style:italic;"># modify .gitignore if needed</span>
+<span style="font-weight:bold;">$</span> git commit -am <span style="font-style:italic;">'Migration from Bazaar to Git'</span></code></pre> <h3 id="sending-your-repository-to-the-server"><a href="#sending-your-repository-to-the-server" class="header-anchor">#</a> Sending your repository to the server</h3> <p>Here we are!
+Now you can push the repository onto its new home server:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git remote add origin git@my-git-server:mygitrepository.git
+<span style="font-weight:bold;">$</span> git push origin --all
+<span style="font-weight:bold;">$</span> git push origin --tags</code></pre> <p>Your Git repository is ready to use.</p> <h2 id="perforce"><a href="#perforce" class="header-anchor">#</a> Perforce</h2> <p>
+下一个将要看到导入的系统是 Perforce。
+就像我们之前讨论过的，有两种方式让 Git 与 Perforce 互相通信：git-p4 与 Perforce Git Fusion。</p> <h3 id="perforce-git-fusion"><a href="#perforce-git-fusion" class="header-anchor">#</a> Perforce Git Fusion</h3> <p>Git Fusion 使这个过程毫无痛苦。
+只需要使用在 <a id="xref-_p4_git_fusion" href="#_p4_git_fusion" class="xref">Git Fusion</a> 中讨论过的配置文件来配置你的项目设置、用户映射与分支，然后克隆整个仓库。
+Git Fusion 让你处在一个看起来像是原生 Git 仓库的环境中，如果愿意的话你可以随时将它推送到一个原生 Git 托管中。
+如果你喜欢的话甚至可以使用 Perforce 作为你的 Git 托管。</p> <h3 id="git-p4"><a href="#git-p4" class="header-anchor">#</a> Git-p4</h3> <p>Git-p4 也可以作为一个导入工具。
+作为例子，我们将从 Perforce 公开仓库中导入 Jam 项目。
+为了设置客户端，必须导出 P4PORT 环境变量指向 Perforce 仓库：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> export P4PORT=public.perforce.com:1666</code></pre> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>为了继续后续步骤，需要连接到 Perforce 仓库。
+在我们的例子中将会使用在 public.perforce.com 的公开仓库，但是你可以使用任何你有权限的仓库。</p></div></aside> <p>
+运行 <code class="literal">git p4 clone</code> 命令从 Perforce 服务器导入 Jam 项目，提供仓库、项目路径与你想要存放导入项目的路径：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git-p4 clone //guest/perforce_software/jam@all p4import
+Importing from //guest/perforce_software/jam@all into p4import
+Initialized empty Git repository in /private/tmp/p4import/.git/
+Import destination: refs/remotes/p4/master
+Importing revision 9957 (100%)</code></pre> <p>这个特定的项目只有一个分支，但是如果你在分支视图（或者说一些目录）中配置了一些分支，你可以将 <code class="literal">--detect-branches</code> 选项传递给 <code class="literal">git p4 clone</code> 来导入项目的所有分支。
+查看 <a id="xref-_git_p4_branches" href="#_git_p4_branches" class="xref">分支</a> 来了解关于这点的更多信息。</p> <p>此时你几乎已经完成了。
+如果进入 <code class="literal">p4import</code> 目录中并运行 <code class="literal">git log</code>，可以看到你的导入工作：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git log -2
+commit e5da1c909e5db3036475419f6379f2c73710c4e6
+Author: giles &lt;giles@giles@perforce.com&gt;
+Date:   Wed Feb 8 03:13:27 2012 -0800
+
+    Correction to line 355; change &lt;/UL&gt; to &lt;/OL&gt;.
+
+    [git-p4: depot-paths = &quot;//public/jam/src/&quot;: change = 8068]
+
+commit aa21359a0a135dda85c50a7f7cf249e4f7b8fd98
+Author: kwirth &lt;kwirth@perforce.com&gt;
+Date:   Tue Jul 7 01:35:51 2009 -0800
+
+    Fix spelling error on Jam doc page (cummulative -&gt; cumulative).
+
+    [git-p4: depot-paths = &quot;//public/jam/src/&quot;: change = 7304]</code></pre> <p>你可以看到 <code class="literal">git-p4</code> 在每一个提交里都留下了一个标识符。
+如果之后想要引用 Perforce 的修改序号的话，标识符保留在那里也是可以的。
+然而，如果想要移除标识符，现在正是这么做的时候——在你开始在新仓库中工作之前。
+</p><p>可以使用 <code class="literal">git filter-branch</code> 将全部标识符移除。</p><p></p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git filter-branch --msg-filter <span style="font-style:italic;">'sed -e &quot;/^\[git-p4:/d&quot;'</span>
+Rewrite e5da1c909e5db3036475419f6379f2c73710c4e6 (125/125)
+Ref 'refs/heads/master' was rewritten</code></pre> <p>如果运行 <code class="literal">git log</code>，你会看到所有提交的 SHA-1 校验和都改变了，但是提交信息中不再有 <code class="literal">git-p4</code> 字符串了：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git log -2
+commit b17341801ed838d97f7800a54a6f9b95750839b7
+Author: giles &lt;giles@giles@perforce.com&gt;
+Date:   Wed Feb 8 03:13:27 2012 -0800
+
+    Correction to line 355; change &lt;/UL&gt; to &lt;/OL&gt;.
+
+commit 3e68c2e26cd89cb983eb52c024ecdfba1d6b3fff
+Author: kwirth &lt;kwirth@perforce.com&gt;
+Date:   Tue Jul 7 01:35:51 2009 -0800
+
+    Fix spelling error on Jam doc page (cummulative -&gt; cumulative).</code></pre> <p>现在导入已经准备好推送到你的新 Git 服务器上了。</p> <h2 id="tfs"><a href="#tfs" class="header-anchor">#</a> TFS</h2> <p>
+如果你的团队正在将他们的源代码管理从 TFVC 转换为 Git，你们会想要最高程度的无损转换。
+这意味着，虽然我们在之前的交互章节介绍了 git-tfs 与 git-tf 两种工具，但是我们在本部分只能介绍 git-tfs，因为 git-tfs 支持分支，而使用 git-tf 代价太大。</p> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>这是一个单向转换。
+这意味着 Git 仓库无法连接到原始的 TFVC 项目。</p></div></aside> <p>第一件事是映射用户名。
+TFVC 对待变更集作者字段的内容相当宽容，但是 Git 需要人类可读的名字与邮箱地址。
+可以通过 <code class="literal">tf</code> 命令行客户端来获取这个信息，像这样：</p> <pre class="source language-powershell"><code>PS&gt; tf history $/myproject -recursive &gt; AUTHORS_TMP</code></pre> <p>这会将历史中的所有变更集抓取下来并放到 AUTHORS_TMP 文件中，然后我们将会将 <code class="literal">User</code> 列（第二个）取出来。
+打开文件找到列开始与结束的字符并替换，在下面的命令行中，<code class="literal">cut</code> 命令的参数 <code class="literal">11-20</code> 就是我们找到的：</p> <pre class="source language-powershell"><code>PS&gt; cat AUTHORS_TMP | cut -b 11-20 | tail -n+3 | sort | uniq &gt; AUTHORS</code></pre> <p><code class="literal">cut</code> 命令只会保留每行中第 11 个到第 22 个字符。
+<code class="literal">tail</code> 命令会跳过前两行，就是字段表头与 ASCII 风格的下划线。
+所有这些的结果通过管道送到 <code class="literal">sort</code> 和 <code class="literal">uniq</code> 来去除重复，然后保存到 <code class="literal">AUTOHRS</code> 文件中。
+下一步是手动的；为了让 git-tfs 有效地使用这个文件，每一行必须是这种格式：</p> <pre class="source language-text"><code>DOMAIN\username = User Name &lt;email@address.com&gt;</code></pre> <p>左边的部分是 TFVC 中的 “User” 字段，等号右边的部分是将被用作 Git 提交的用户名。</p> <p>一旦有了这个文件，下一件事就是生成一个你需要的 TFVC 项目的完整克隆：</p> <pre class="source language-powershell"><code>PS&gt; git tfs clone --with-branches --authors=AUTHORS https<span style="border:1px solid #FF0000;">:</span>//username.visualstudio.com/DefaultCollection $/project/Trunk project_git</code></pre> <p>接下来要从提交信息底部清理 <code class="literal">git-tfs-id</code> 区块。
+下面的命令会完成这个任务：</p> <pre class="source language-powershell"><code>PS&gt; git <span style="font-weight:bold;">filter</span>-branch -f --msg-filter <span style="font-style:italic;">'sed &quot;s/^git-tfs-id:.*$//g&quot;'</span> <span style="font-style:italic;">'--'</span> --all</code></pre> <p>那会使用 Git 终端环境中的 <code class="literal">sed</code> 命令来将所有以 “git-tfs-id:” 开头的行替换为 Git 会忽略的空白。</p> <p>全部完成后，你就已经准备好去增加一个新的远程仓库，推送你所有的分支上去，然后你的团队就可以开始用 Git 工作了。</p> <h2 id="一个自定义的导入器"><a href="#一个自定义的导入器" class="header-anchor">#</a> 一个自定义的导入器</h2> <p></p><p>如果你的系统不是上述中的任何一个，你需要在线查找一个导入器——针对许多其他系统有很多高质量的导入器，
+包括 CVS、Clear Case、Visual Source Safe，甚至是一个档案目录。
+如果没有一个工具适合你，需要一个不知名的工具，或者需要更大自由度的自定义导入过程，应当使用 <code class="literal">git fast-import</code>。
+这个命令从标准输入中读取简单指令来写入特定的 Git 数据。
+通过这种方式创建 Git 对象比运行原始 Git 命令或直接写入原始对象
+（查看 <a id="xref--ch10-git-internals" href="/chapter-10/index.html" class="xref">Git 内部原理</a> 了解更多内容）更容易些。
+通过这种方式你可以编写导入脚本，从你要导入的系统中读取必要数据，然后直接打印指令到标准输出。
+然后可以运行这个程序并通过 <code class="literal">git fast-import</code> 重定向管道输出。</p> <p>为了快速演示，我们会写一个简单的导入器。
+假设你在 <code class="literal">current</code> 工作，有时候会备份你的项目到时间标签 <code class="literal">back_YYYY_MM_DD</code> 备份目录中，你想要将这些导入到 Git 中。
+目录结构看起来是这样：</p><p></p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> ls /opt/import_from
+back_2014_01_02
+back_2014_01_04
+back_2014_01_14
+back_2014_02_03
+current</code></pre> <p>为了导入一个 Git 目录，需要了解 Git 如何存储它的数据。
+你可能记得，Git 在底层存储指向内容快照的提交对象的链表。
+所有要做的就是告诉 <code class="literal">fast-import</code> 哪些内容是快照，哪个提交数据指向它们，以及它们进入的顺序。
+你的策略是一次访问一个快照，然后用每个目录中的内容创建提交，并且将每一个提交与前一个连接起来。</p> <p>如同我们在 <a id="xref--ch08-customizing-git--_an_example_git_enforced_policy" href="/chapter-8/4.html#使用强制策略的一个例子" class="xref">使用强制策略的一个例子</a> 里做的，
+我们将会使用 Ruby 写这个，因为它是我们平常工作中使用的并且它很容易读懂。
+可以使用任何你熟悉的东西来非常轻松地写这个例子——它只需要将合适的信息打印到 <code class="literal">标准输出</code>。
+然而，如果你在 Windows 上，这意味着需要特别注意不要引入回车符到行尾——
+<code class="literal">git fast-import</code> 非常特别地只接受换行符（LF）而不是 Windows 使用的回车换行符（CRLF）。</p> <p>现在开始，需要进入目标目录中并识别每一个子目录，每一个都是你要导入为提交的快照。
+要进入到每个子目录中并为导出它打印必要的命令。
+基本主循环像这个样子：</p> <pre class="source language-ruby"><code>last_mark = <span style="font-weight:bold;">nil</span>
+
+<span style="font-style:italic;"># loop through the directories</span>
+Dir.chdir(ARGV[0]) <span style="font-weight:bold;">do</span>
+  Dir.glob(<span style="font-style:italic;">&quot;*&quot;</span>).each <span style="font-weight:bold;">do</span> |dir|
+    <span style="font-weight:bold;">next</span> <span style="font-weight:bold;">if</span> File.file?(dir)
+
+    <span style="font-style:italic;"># move into the target directory</span>
+    Dir.chdir(dir) <span style="font-weight:bold;">do</span>
+      last_mark = print_export(dir, last_mark)
+    <span style="font-weight:bold;">end</span>
+  <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>在每个目录内运行 <code class="literal">print_export</code>，将会拿到清单并标记之前的快照，然后返回清单并标记现在的快照；通过这种方式，可以将它们合适地连接在一起。
+“标记”是一个给提交标识符的 <code class="literal">fast-import</code> 术语；当你创建提交，为每一个提交赋予一个标记来将它与其他提交连接在一起。
+这样，在你的 <code class="literal">print_export</code> 方法中第一件要做的事就是从目录名字生成一个标记：</p> <pre class="source language-ruby"><code>mark = convert_dir_to_mark(dir)</code></pre> <p>可以创建一个目录的数组并使用索引做为标记，因为标记必须是一个整数。
+方法类似这样：</p> <pre class="source language-ruby"><code>$marks = []
+<span style="font-weight:bold;">def</span> convert_dir_to_mark(dir)
+  <span style="font-weight:bold;">if</span> !$marks.include?(dir)
+    $marks &lt;&lt; dir
+  <span style="font-weight:bold;">end</span>
+  ($marks.index(dir) + 1).to_s
+<span style="font-weight:bold;">end</span></code></pre> <p>既然有一个整数代表你的提交，那还要给提交元数据一个日期。
+因为目录名字表达了日期，所以你将会从中解析出日期。
+你的 <code class="literal">print_export</code> 文件的下一行是：</p> <pre class="source language-ruby"><code>date = convert_dir_to_date(dir)</code></pre> <p><code class="literal">convert_dir_to_date</code> 定义为：</p> <pre class="source language-ruby"><code><span style="font-weight:bold;">def</span> convert_dir_to_date(dir)
+  <span style="font-weight:bold;">if</span> dir == <span style="font-style:italic;">'current'</span>
+    <span style="font-weight:bold;">return</span> Time.now().to_i
+  <span style="font-weight:bold;">else</span>
+    dir = dir.gsub(<span style="font-style:italic;">'back_'</span>, <span style="font-style:italic;">''</span>)
+    (year, month, day) = dir.split(<span style="font-style:italic;">'_'</span>)
+    <span style="font-weight:bold;">return</span> Time.local(year, month, day).to_i
+  <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>那会返回每一个目录日期的整数。
+最后一项每个提交需要的元数据是提交者信息，它将会被硬编码在全局变量中：</p> <pre class="source language-ruby"><code>$author = <span style="font-style:italic;">'John Doe &lt;john@example.com&gt;'</span></code></pre> <p>现在准备开始为你的导入器打印出提交数据。
+初始信息声明定义了一个提交对象与它所在的分支，紧接着一个你生成的标记、提交者信息与提交信息、然后是一个之前的提交，如果它存在的话。
+代码看起来像这样：</p> <pre class="source language-ruby"><code><span style="font-style:italic;"># print the import information</span>
+puts <span style="font-style:italic;">'commit refs/heads/master'</span>
+puts <span style="font-style:italic;">'mark :'</span> + mark
+puts <span style="font-style:italic;">&quot;committer </span><span style="font-weight:bold;font-style:italic;">#{</span>$author<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> </span><span style="font-weight:bold;font-style:italic;">#{</span>date<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> -0700&quot;</span>
+export_data(<span style="font-style:italic;">'imported from '</span> + dir)
+puts <span style="font-style:italic;">'from :'</span> + last_mark <span style="font-weight:bold;">if</span> last_mark</code></pre> <p>我们将硬编码时区信息（-0700），因为这样很容易。
+如果从其他系统导入，必须指定为一个偏移的时区。
+提交信息必须指定为特殊的格式：</p> <pre class="source language-"><code>data (size)\n(contents)</code></pre> <p>这个格式包括文本数据、将要读取数据的大小、一个换行符、最终的数据。
+因为之后还需要为文件内容指定相同的数据格式，你需要创建一个帮助函数，<code class="literal">export_data</code>：</p> <pre class="source language-ruby"><code><span style="font-weight:bold;">def</span> export_data(string)
+  print <span style="font-style:italic;">&quot;data </span><span style="font-weight:bold;font-style:italic;">#{</span>string.size<span style="font-weight:bold;font-style:italic;">}\n#{</span>string<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>剩下的工作就是指定每一个快照的文件内容。
+这很轻松，因为每一个目录都是一个快照——可以在目录中的每一个文件内容后打印 <code class="literal">deleteall</code> 命令。
+Git 将会适当地记录每一个快照：</p> <pre class="source language-ruby"><code>puts <span style="font-style:italic;">'deleteall'</span>
+Dir.glob(<span style="font-style:italic;">&quot;**/*&quot;</span>).each <span style="font-weight:bold;">do</span> |file|
+  <span style="font-weight:bold;">next</span> <span style="font-weight:bold;">if</span> !File.file?(file)
+  inline_data(file)
+<span style="font-weight:bold;">end</span></code></pre> <p>注意：因为大多数系统认为他们的版本是从一个提交变化到另一个提交，fast-import 也可以为每一个提交执行命令来指定哪些文件是添加的、删除的或修改的与新内容是哪些。
+可以计算快照间的不同并只提供这些数据，但是这样做会很复杂——也可以把所有数据给 Git 然后让它为你指出来。
+如果这更适合你的数据，查阅 <code class="literal">fast-import</code> man 帮助页来了解如何以这种方式提供你的数据。</p> <p>这种列出新文件内容或用新内容指定修改文件的格式如同下面的内容：</p> <pre class="source language-"><code>M 644 inline path/to/file
+data (size)
+(file contents)</code></pre> <p>这里，644 是模式（如果你有可执行文件，反而你需要检测并指定 755），inline 表示将会立即把内容放在本行之后。
+你的 <code class="literal">inline_data</code> 方法看起来像这样：</p> <pre class="source language-ruby"><code><span style="font-weight:bold;">def</span> inline_data(file, code = <span style="font-style:italic;">'M'</span>, mode = <span style="font-style:italic;">'644'</span>)
+  content = File.read(file)
+  puts <span style="font-style:italic;">&quot;</span><span style="font-weight:bold;font-style:italic;">#{</span>code<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> </span><span style="font-weight:bold;font-style:italic;">#{</span>mode<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> inline </span><span style="font-weight:bold;font-style:italic;">#{</span>file<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+  export_data(content)
+<span style="font-weight:bold;">end</span></code></pre> <p>可以重用之前定义的 <code class="literal">export_data</code> 方法，因为它与你定义的提交信息数据的方法一样。</p> <p>最后一件你需要做的是返回当前的标记以便它可以传给下一个迭代：</p> <pre class="source language-ruby"><code><span style="font-weight:bold;">return</span> mark</code></pre> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>如果在 Windows 上还需要确保增加一个额外步骤。
+正如之前提到的，Windows 使用 CRLF 作为换行符而 <code class="literal">git fast-import</code> 只接受 LF。
+为了修正这个问题使 <code class="literal">git fast-import</code> 正常工作，你需要告诉 ruby 使用 LF 代替 CRLF：</p> <pre class="source language-ruby"><code>$stdout.binmode</code></pre></div></aside> <p>就是这样。
+这是全部的脚本：</p> <pre class="source language-ruby"><code><span style="font-style:italic;">#!/usr/bin/env ruby</span>
+
+$stdout.binmode
+$author = <span style="font-style:italic;">&quot;John Doe &lt;john@example.com&gt;&quot;</span>
+
+$marks = []
+<span style="font-weight:bold;">def</span> convert_dir_to_mark(dir)
+    <span style="font-weight:bold;">if</span> !$marks.include?(dir)
+        $marks &lt;&lt; dir
+    <span style="font-weight:bold;">end</span>
+    ($marks.index(dir)+1).to_s
+<span style="font-weight:bold;">end</span>
+
+<span style="font-weight:bold;">def</span> convert_dir_to_date(dir)
+    <span style="font-weight:bold;">if</span> dir == <span style="font-style:italic;">'current'</span>
+        <span style="font-weight:bold;">return</span> Time.now().to_i
+    <span style="font-weight:bold;">else</span>
+        dir = dir.gsub(<span style="font-style:italic;">'back_'</span>, <span style="font-style:italic;">''</span>)
+        (year, month, day) = dir.split(<span style="font-style:italic;">'_'</span>)
+        <span style="font-weight:bold;">return</span> Time.local(year, month, day).to_i
+    <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span>
+
+<span style="font-weight:bold;">def</span> export_data(string)
+    print <span style="font-style:italic;">&quot;data </span><span style="font-weight:bold;font-style:italic;">#{</span>string.size<span style="font-weight:bold;font-style:italic;">}\n#{</span>string<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+<span style="font-weight:bold;">end</span>
+
+<span style="font-weight:bold;">def</span> inline_data(file, code=<span style="font-style:italic;">'M'</span>, mode=<span style="font-style:italic;">'644'</span>)
+    content = File.read(file)
+    puts <span style="font-style:italic;">&quot;</span><span style="font-weight:bold;font-style:italic;">#{</span>code<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> </span><span style="font-weight:bold;font-style:italic;">#{</span>mode<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> inline </span><span style="font-weight:bold;font-style:italic;">#{</span>file<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+    export_data(content)
+<span style="font-weight:bold;">end</span>
+
+<span style="font-weight:bold;">def</span> print_export(dir, last_mark)
+    date = convert_dir_to_date(dir)
+    mark = convert_dir_to_mark(dir)
+
+    puts <span style="font-style:italic;">'commit refs/heads/master'</span>
+    puts <span style="font-style:italic;">&quot;mark :</span><span style="font-weight:bold;font-style:italic;">#{</span>mark<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+    puts <span style="font-style:italic;">&quot;committer </span><span style="font-weight:bold;font-style:italic;">#{</span>$author<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> </span><span style="font-weight:bold;font-style:italic;">#{</span>date<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> -0700&quot;</span>
+    export_data(<span style="font-style:italic;">&quot;imported from </span><span style="font-weight:bold;font-style:italic;">#{</span>dir<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>)
+    puts <span style="font-style:italic;">&quot;from :</span><span style="font-weight:bold;font-style:italic;">#{</span>last_mark<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span> <span style="font-weight:bold;">if</span> last_mark
+
+    puts <span style="font-style:italic;">'deleteall'</span>
+    Dir.glob(<span style="font-style:italic;">&quot;**/*&quot;</span>).each <span style="font-weight:bold;">do</span> |file|
+        <span style="font-weight:bold;">next</span> <span style="font-weight:bold;">if</span> !File.file?(file)
+        inline_data(file)
+    <span style="font-weight:bold;">end</span>
+    mark
+<span style="font-weight:bold;">end</span>
+
+<span style="font-style:italic;"># Loop through the directories</span>
+last_mark = <span style="font-weight:bold;">nil</span>
+Dir.chdir(ARGV[0]) <span style="font-weight:bold;">do</span>
+    Dir.glob(<span style="font-style:italic;">&quot;*&quot;</span>).each <span style="font-weight:bold;">do</span> |dir|
+        <span style="font-weight:bold;">next</span> <span style="font-weight:bold;">if</span> File.file?(dir)
+
+        <span style="font-style:italic;"># move into the target directory</span>
+        Dir.chdir(dir) <span style="font-weight:bold;">do</span>
+            last_mark = print_export(dir, last_mark)
+        <span style="font-weight:bold;">end</span>
+    <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>如果运行这个脚本，你会得到类似下面的内容：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> ruby import.rb /opt/import_from
+commit refs/heads/master
+mark :1
+committer John Doe &lt;john@example.com&gt; 1388649600 -0700
+data 29
+imported from back_2014_01_02deleteall
+M 644 inline README.md
+data 28
+<span style="font-weight:bold;">#</span> Hello
+
+This is my readme.
+commit refs/heads/master
+mark :2
+committer John Doe &lt;john@example.com&gt; 1388822400 -0700
+data 29
+imported from back_2014_01_04from :1
+deleteall
+M 644 inline main.rb
+data 34
+<span style="font-weight:bold;">#</span>!/bin/env ruby
+
+puts &quot;Hey there&quot;
+M 644 inline README.md
+(...)</code></pre> <p>为了运行导入器，将这些输出用管道重定向到你想要导入的 Git 目录中的 <code class="literal">git fast-import</code>。
+可以创建一个新的目录并在其中运行 <code class="literal">git init</code> 作为开始，然后运行你的脚本：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git init
+Initialized empty Git repository in /opt/import_to/.git/
+<span style="font-weight:bold;">$</span> ruby import.rb /opt/import_from | git fast-import
+git-fast-import statistics:
+---------------------------------------------------------------------
+Alloc'd objects:       5000
+Total objects:           13 (         6 duplicates                  )
+      blobs  :            5 (         4 duplicates          3 deltas of          5 attempts)
+      trees  :            4 (         1 duplicates          0 deltas of          4 attempts)
+      commits:            4 (         1 duplicates          0 deltas of          0 attempts)
+      tags   :            0 (         0 duplicates          0 deltas of          0 attempts)
+Total branches:           1 (         1 loads     )
+      marks:           1024 (         5 unique    )
+      atoms:              2
+Memory total:          2344 KiB
+       pools:          2110 KiB
+     objects:           234 KiB
+---------------------------------------------------------------------
+pack_report: getpagesize()            =       4096
+pack_report: core.packedGitWindowSize = 1073741824
+pack_report: core.packedGitLimit      = 8589934592
+pack_report: pack_used_ctr            =         10
+pack_report: pack_mmap_calls          =          5
+pack_report: pack_open_windows        =          2 /          2
+pack_report: pack_mapped              =       1457 /       1457
+---------------------------------------------------------------------</code></pre> <p>正如你所看到的，当它成功完成时，它会给你一串关于它完成内容的统计。
+这本例中，一共导入了 13 个对象、4 次提交到 1 个分支。
+现在，可以运行 <code class="literal">git log</code> 来看一下你的新历史：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git log -2
+commit 3caa046d4aac682a55867132ccdfbe0d3fdee498
+Author: John Doe &lt;john@example.com&gt;
+Date:   Tue Jul 29 19:39:04 2014 -0700
+
+    imported from current
+
+commit 4afc2b945d0d3c8cd00556fbe2e8224569dc9def
+Author: John Doe &lt;john@example.com&gt;
+Date:   Mon Feb 3 01:00:00 2014 -0700
+
+    imported from back_2014_02_03</code></pre> <p>做得很好——一个漂亮、干净的 Git 仓库。
+要注意的一点是并没有检出任何东西——一开始你的工作目录内并没有任何文件。
+为了得到他们，你必须将分支重置到 <code class="literal">master</code> 所在的地方：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> ls
+<span style="font-weight:bold;">$</span> git reset --hard master
+HEAD is now at 3caa046 imported from current
+<span style="font-weight:bold;">$</span> ls
+README.md main.rb</code></pre> <p>可以通过 <code class="literal">fast-import</code> 工具做很多事情——处理不同模式、二进制数据、多个分支与合并、标签、进度指示等等。
+一些更复杂情形下的例子可以在 Git 源代码目录中的 <code class="literal">contrib/fast-import</code> 目录中找到。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-9/1.html" class="prev">
+        作为客户端的 Git
+      </a></span> <span class="next"><a href="/chapter-9/3.html">
+        总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/117.42a1b8c4.js" defer></script>
+  </body>
+</html>

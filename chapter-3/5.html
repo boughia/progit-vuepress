@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>远程分支 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/14.6debe4be.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable router-link-active open"><span>3. Git 分支</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-3/1.html" class="sidebar-link">分支简介</a></li><li><a href="/chapter-3/2.html" class="sidebar-link">分支的新建与合并</a></li><li><a href="/chapter-3/3.html" class="sidebar-link">分支管理</a></li><li><a href="/chapter-3/4.html" class="sidebar-link">分支开发工作流</a></li><li><a href="/chapter-3/5.html" class="active sidebar-link">远程分支</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-3/5.html#推送" class="sidebar-link">推送</a></li><li class="sidebar-sub-header"><a href="/chapter-3/5.html#跟踪分支" class="sidebar-link">跟踪分支</a></li><li class="sidebar-sub-header"><a href="/chapter-3/5.html#拉取" class="sidebar-link">拉取</a></li><li class="sidebar-sub-header"><a href="/chapter-3/5.html#删除远程分支" class="sidebar-link">删除远程分支</a></li></ul></li><li><a href="/chapter-3/6.html" class="sidebar-link">变基</a></li><li><a href="/chapter-3/7.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="远程分支"><a href="#远程分支" class="header-anchor">#</a> 远程分支</h1> <p>
+远程引用是对远程仓库的引用（指针），包括分支、标签等等。
+你可以通过 <code class="literal">git ls-remote &lt;remote&gt;</code> 来显式地获得远程引用的完整列表，
+或者通过 <code class="literal">git remote show &lt;remote&gt;</code> 获得远程分支的更多信息。
+然而，一个更常见的做法是利用远程跟踪分支。</p> <p>远程跟踪分支是远程分支状态的引用。它们是你无法移动的本地引用。一旦你进行了网络通信，
+Git 就会为你移动它们以精确反映远程仓库的状态。请将它们看做书签，
+这样可以提醒你该分支在远程仓库中的位置就是你最后一次连接到它们的位置。</p> <p>它们以 <code class="literal">&lt;remote&gt;/&lt;branch&gt;</code> 的形式命名。
+例如，如果你想要看你最后一次与远程仓库 <code class="literal">origin</code> 通信时 <code class="literal">master</code> 分支的状态，你可以查看 <code class="literal">origin/master</code> 分支。
+你与同事合作解决一个问题并且他们推送了一个 <code class="literal">iss53</code> 分支，你可能有自己的本地 <code class="literal">iss53</code> 分支，
+然而在服务器上的分支会以 <code class="literal">origin/iss53</code> 来表示。</p> <p>这可能有一点儿难以理解，让我们来看一个例子。
+假设你的网络里有一个在 <code class="literal">git.ourcompany.com</code> 的 Git 服务器。
+如果你从这里克隆，Git 的 <code class="literal">clone</code> 命令会为你自动将其命名为 <code class="literal">origin</code>，拉取它的所有数据，
+创建一个指向它的 <code class="literal">master</code> 分支的指针，并且在本地将其命名为 <code class="literal">origin/master</code>。
+Git 也会给你一个与 origin 的 <code class="literal">master</code> 分支在指向同一个地方的本地 <code class="literal">master</code> 分支，这样你就有工作的基础。</p> <aside title="Note: “origin” 并无特殊含义" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <h2>“origin” 并无特殊含义</h2> <div class="content"><p>远程仓库名字 “origin” 与分支名字 “master” 一样，在 Git 中并没有任何特别的含义一样。
+同时 “master” 是当你运行 <code class="literal">git init</code> 时默认的起始分支名字，原因仅仅是它的广泛使用，
+“origin” 是当你运行 <code class="literal">git clone</code> 时默认的远程仓库名字。
+如果你运行 <code class="literal">git clone -o booyah</code>，那么你默认的远程分支名字将会是 <code class="literal">booyah/master</code>。</p></div></aside> <figure class="image"><div class="content"><img src="/assets/img/remote-branches-1.39126cf1.png" alt="克隆之后的服务器与本地仓库。"></div> <figcaption>Figure 22. 克隆之后的服务器与本地仓库</figcaption></figure> <p>如果你在本地的 <code class="literal">master</code> 分支做了一些工作，在同一段时间内有其他人推送提交到
+<code class="literal">git.ourcompany.com</code> 并且更新了它的 <code class="literal">master</code> 分支，这就是说你们的提交历史已走向不同的方向。
+即便这样，只要你保持不与 <code class="literal">origin</code> 服务器连接（并拉取数据），你的 <code class="literal">origin/master</code> 指针就不会移动。</p> <figure class="image"><div class="content"><img src="/assets/img/remote-branches-2.22fa5520.png" alt="本地与远程的工作可以分叉。"></div> <figcaption>Figure 23. 本地与远程的工作可以分叉</figcaption></figure> <p>如果要与给定的远程仓库同步数据，运行 <code class="literal">git fetch &lt;remote&gt;</code> 命令（在本例中为 <code class="literal">git fetch origin</code>）。
+这个命令查找 “origin” 是哪一个服务器（在本例中，它是 <code class="literal">git.ourcompany.com</code>），
+从中抓取本地没有的数据，并且更新本地数据库，移动 <code class="literal">origin/master</code> 指针到更新之后的位置。</p> <figure class="image"><div class="content"><img src="/assets/img/remote-branches-3.070aa72d.png" alt="`git fetch` 更新你的远程仓库引用。"></div> <figcaption>Figure 24. <code class="literal">git fetch</code> 更新你的远程跟踪分支</figcaption></figure> <p>为了演示有多个远程仓库与远程分支的情况，我们假定你有另一个内部 Git 服务器，仅服务于你的某个敏捷开发团队。
+这个服务器位于 <code class="literal">git.team1.ourcompany.com</code>。
+你可以运行 <code class="literal">git remote add</code> 命令添加一个新的远程仓库引用到当前的项目，这个命令我们会在
+<a id="xref--ch02-git-basics-chapter" href="/chapter-2/index.html" class="xref">Git 基础</a> 中详细说明。
+将这个远程仓库命名为 <code class="literal">teamone</code>，将其作为完整 URL 的缩写。</p> <figure class="image"><div class="content"><img src="/assets/img/remote-branches-4.3d3f6f12.png" alt="添加另一个远程仓库。"></div> <figcaption>Figure 25. 添加另一个远程仓库</figcaption></figure> <p>现在，可以运行 <code class="literal">git fetch teamone</code> 来抓取远程仓库 <code class="literal">teamone</code> 有而本地没有的数据。
+因为那台服务器上现有的数据是 <code class="literal">origin</code> 服务器上的一个子集，
+所以 Git 并不会抓取数据而是会设置远程跟踪分支 <code class="literal">teamone/master</code> 指向 <code class="literal">teamone</code> 的 <code class="literal">master</code> 分支。</p> <figure class="image"><div class="content"><img src="/assets/img/remote-branches-5.d4727783.png" alt="远程跟踪分支 `teamone/master`。"></div> <figcaption>Figure 26. 远程跟踪分支 <code class="literal">teamone/master</code></figcaption></figure> <h2 id="推送"><a href="#推送" class="header-anchor">#</a> 推送</h2> <p>
+当你想要公开分享一个分支时，需要将其推送到有写入权限的远程仓库上。
+本地的分支并不会自动与远程仓库同步——你必须显式地推送想要分享的分支。
+这样，你就可以把不愿意分享的内容放到私人分支上，而将需要和别人协作的内容推送到公开分支。</p> <p>如果希望和别人一起在名为 <code class="literal">serverfix</code> 的分支上工作，你可以像推送第一个分支那样推送它。
+运行 <code class="literal">git push &lt;remote&gt; &lt;branch&gt;</code>:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin serverfix
+Counting objects: 24, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (24/24), 1.91 KiB | 0 bytes/s, done.
+Total 24 (delta 2), reused 0 (delta 0)
+To https://github.com/schacon/simplegit
+ * [new branch]      serverfix -&gt; serverfix</code></pre> <p>这里有些工作被简化了。
+Git 自动将 <code class="literal">serverfix</code> 分支名字展开为 <code class="literal">refs/heads/serverfix:refs/heads/serverfix</code>，
+那意味着，“推送本地的 <code class="literal">serverfix</code> 分支来更新远程仓库上的 <code class="literal">serverfix</code> 分支。”
+我们将会详细学习 <a id="xref--ch10-git-internals" href="/chapter-10/index.html" class="xref">Git 内部原理</a> 的 <code class="literal">refs/heads/</code> 部分，
+但是现在可以先把它放在儿。你也可以运行 <code class="literal">git push origin serverfix:serverfix</code>，
+它会做同样的事——也就是说“推送本地的 <code class="literal">serverfix</code> 分支，将其作为远程仓库的 <code class="literal">serverfix</code> 分支”
+可以通过这种格式来推送本地分支到一个命名不相同的远程分支。
+如果并不想让远程仓库上的分支叫做 <code class="literal">serverfix</code>，可以运行 <code class="literal">git push origin serverfix:awesomebranch</code>
+来将本地的 <code class="literal">serverfix</code> 分支推送到远程仓库上的 <code class="literal">awesomebranch</code> 分支。</p> <aside title="Note: 如何避免每次输入密码" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <h2>如何避免每次输入密码</h2> <div class="content"><p>如果你正在使用 HTTPS URL 来推送，Git 服务器会询问用户名与密码。
+默认情况下它会在终端中提示服务器是否允许你进行推送。</p> <p>如果不想在每一次推送时都输入用户名与密码，你可以设置一个 “credential cache”。
+最简单的方式就是将其保存在内存中几分钟，可以简单地运行 <code class="literal">git config --global credential.helper cache</code> 来设置它。</p> <p>想要了解更多关于不同验证缓存的可用选项，查看 <a id="xref--ch07-git-tools--_credential_caching" href="/chapter-7/14.html#凭证存储" class="xref">凭证存储</a>。</p></div></aside> <p>下一次其他协作者从服务器上抓取数据时，他们会在本地生成一个远程分支 <code class="literal">origin/serverfix</code>，指向服务器的 <code class="literal">serverfix</code> 分支的引用：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git fetch origin
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From https://github.com/schacon/simplegit
+ * [new branch]      serverfix    -&gt; origin/serverfix</code></pre> <p>要特别注意的一点是当抓取到新的远程跟踪分支时，本地不会自动生成一份可编辑的副本（拷贝）。
+换一句话说，这种情况下，不会有一个新的 <code class="literal">serverfix</code> 分支——只有一个不可以修改的 <code class="literal">origin/serverfix</code> 指针。</p> <p>可以运行 <code class="literal">git merge origin/serverfix</code> 将这些工作合并到当前所在的分支。
+如果想要在自己的 <code class="literal">serverfix</code> 分支上工作，可以将其建立在远程跟踪分支之上：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout -b serverfix origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'</code></pre> <p>这会给你一个用于工作的本地分支，并且起点位于 <code class="literal">origin/serverfix</code>。</p> <h2 id="跟踪分支"><a href="#跟踪分支" class="header-anchor">#</a> 跟踪分支</h2> <p>
+从一个远程跟踪分支检出一个本地分支会自动创建所谓的“跟踪分支”（它跟踪的分支叫做“上游分支”）。
+跟踪分支是与远程分支有直接关系的本地分支。
+如果在一个跟踪分支上输入 <code class="literal">git pull</code>，Git 能自动地识别去哪个服务器上抓取、合并到哪个分支。</p> <p>当克隆一个仓库时，它通常会自动地创建一个跟踪 <code class="literal">origin/master</code> 的 <code class="literal">master</code> 分支。
+然而，如果你愿意的话可以设置其他的跟踪分支，或是一个在其他远程仓库上的跟踪分支，又或者不跟踪 <code class="literal">master</code> 分支。
+最简单的实例就是像之前看到的那样，运行 <code class="literal">git checkout -b &lt;branch&gt; &lt;remote&gt;/&lt;branch&gt;</code>。
+这是一个十分常用的操作所以 Git 提供了 <code class="literal">--track</code> 快捷方式：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout --track origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'</code></pre> <p>由于这个操作太常用了，该捷径本身还有一个捷径。
+如果你尝试检出的分支 (a) 不存在且 (b) 刚好只有一个名字与之匹配的远程分支，那么 Git 就会为你创建一个跟踪分支：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'</code></pre> <p>如果想要将本地分支与远程分支设置为不同的名字，你可以轻松地使用上一个命令增加一个不同名字的本地分支：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git checkout -b sf origin/serverfix
+Branch sf set up to track remote branch serverfix from origin.
+Switched to a new branch 'sf'</code></pre> <p>现在，本地分支 <code class="literal">sf</code> 会自动从 <code class="literal">origin/serverfix</code> 拉取。</p> <p>设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支，
+你可以在任意时间使用 <code class="literal">-u</code> 或 <code class="literal">--set-upstream-to</code> 选项运行 <code class="literal">git branch</code> 来显式地设置。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git branch -u origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.</code></pre> <aside title="Note: 上游快捷方式" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <h2>上游快捷方式</h2> <div class="content"><p>当设置好跟踪分支后，可以通过简写 <code class="literal">@{upstream}</code> 或 <code class="literal">@{u}</code> 来引用它的上游分支。
+所以在 <code class="literal">master</code> 分支时并且它正在跟踪 <code class="literal">origin/master</code> 时，如果愿意的话可以使用 <code class="literal">git merge @{u}</code> 来取代 <code class="literal">git merge origin/master</code>。</p></div></aside> <p>如果想要查看设置的所有跟踪分支，可以使用 <code class="literal">git branch</code> 的 <code class="literal">-vv</code> 选项。
+这会将所有的本地分支列出来并且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git branch -vv
+  iss53     7e424c3 [origin/iss53: ahead 2] forgot the brackets
+  master    1ae2a45 [origin/master] deploying index fix
+* serverfix f8674d9 [teamone/server-fix-good: ahead 3, behind 1] this should do it
+  testing   5ea463a trying something new</code></pre> <p>这里可以看到 <code class="literal">iss53</code> 分支正在跟踪 <code class="literal">origin/iss53</code> 并且 “ahead” 是 2，意味着本地有两个提交还没有推送到服务器上。
+也能看到 <code class="literal">master</code> 分支正在跟踪 <code class="literal">origin/master</code> 分支并且是最新的。
+接下来可以看到 <code class="literal">serverfix</code> 分支正在跟踪 <code class="literal">teamone</code> 服务器上的 <code class="literal">server-fix-good</code> 分支并且领先 3 落后 1，
+意味着服务器上有一次提交还没有合并入同时本地有三次提交还没有推送。
+最后看到 <code class="literal">testing</code> 分支并没有跟踪任何远程分支。</p> <p>需要重点注意的一点是这些数字的值来自于你从每个服务器上最后一次抓取的数据。
+这个命令并没有连接服务器，它只会告诉你关于本地缓存的服务器数据。
+如果想要统计最新的领先与落后数字，需要在运行此命令前抓取所有的远程仓库。
+可以像这样做：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git fetch --all; git branch -vv</code></pre> <h2 id="拉取"><a href="#拉取" class="header-anchor">#</a> 拉取</h2> <p>
+当 <code class="literal">git fetch</code> 命令从服务器上抓取本地没有的数据时，它并不会修改工作目录中的内容。
+它只会获取数据然后让你自己合并。
+然而，有一个命令叫作 <code class="literal">git pull</code> 在大多数情况下它的含义是一个 <code class="literal">git fetch</code> 紧接着一个 <code class="literal">git merge</code> 命令。
+如果有一个像之前章节中演示的设置好的跟踪分支，不管它是显式地设置还是通过
+<code class="literal">clone</code> 或 <code class="literal">checkout</code> 命令为你创建的，<code class="literal">git pull</code> 都会查找当前分支所跟踪的服务器与分支，
+从服务器上抓取数据然后尝试合并入那个远程分支。</p> <p>由于 <code class="literal">git pull</code> 的魔法经常令人困惑所以通常单独显式地使用 <code class="literal">fetch</code> 与 <code class="literal">merge</code> 命令会更好一些。</p> <h2 id="删除远程分支"><a href="#删除远程分支" class="header-anchor">#</a> 删除远程分支</h2> <p>
+假设你已经通过远程分支做完所有的工作了——也就是说你和你的协作者已经完成了一个特性，
+并且将其合并到了远程仓库的 <code class="literal">master</code> 分支（或任何其他稳定代码分支）。
+可以运行带有 <code class="literal">--delete</code> 选项的 <code class="literal">git push</code> 命令来删除一个远程分支。
+如果想要从服务器上删除 <code class="literal">serverfix</code> 分支，运行下面的命令：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git push origin --delete serverfix
+To https://github.com/schacon/simplegit
+ - [deleted]         serverfix</code></pre> <p>基本上这个命令做的只是从服务器上移除这个指针。
+Git 服务器通常会保留数据一段时间直到垃圾回收运行，所以如果不小心删除掉了，通常是很容易恢复的。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-3/4.html" class="prev">
+        分支开发工作流
+      </a></span> <span class="next"><a href="/chapter-3/6.html">
+        变基
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/14.6debe4be.js" defer></script>
+  </body>
+</html>

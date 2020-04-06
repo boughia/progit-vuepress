@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git 属性 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/29.95a71153.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable router-link-active open"><span>8. 自定义 Git</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-8/1.html" class="sidebar-link">配置 Git</a></li><li><a href="/chapter-8/2.html" class="active sidebar-link">Git 属性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-8/2.html#二进制文件" class="sidebar-link">二进制文件</a></li><li class="sidebar-sub-header"><a href="/chapter-8/2.html#关键字展开" class="sidebar-link">关键字展开</a></li><li class="sidebar-sub-header"><a href="/chapter-8/2.html#导出版本库" class="sidebar-link">导出版本库</a></li><li class="sidebar-sub-header"><a href="/chapter-8/2.html#合并策略" class="sidebar-link">合并策略</a></li></ul></li><li><a href="/chapter-8/3.html" class="sidebar-link">Git 钩子</a></li><li><a href="/chapter-8/4.html" class="sidebar-link">使用强制策略的一个例子</a></li><li><a href="/chapter-8/5.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git-属性"><a href="#git-属性" class="header-anchor">#</a> Git 属性</h1> <p>
+你也可以针对特定的路径配置某些设置项，这样 Git 就只对特定的子目录或子文件集运用它们。
+这些基于路径的设置项被称为 Git 属性，可以在你的目录下的 <code class="literal">.gitattributes</code> 文件内进行设置（通常是你的项目的根目录）。如果不想让这些属性文件与其它文件一同提交，你也可以在 <code class="literal">.git/info/attributes</code> 文件中进行设置。</p> <p>通过使用属性，你可以对项目中的文件或目录单独定义不同的合并策略，让 Git 知道怎样比较非文本文件，或者让 Git 在提交或检出前过滤内容。
+在本节，你将学习到一些能在自己的项目中用到的属性，并看到几个实际的例子。</p> <h2 id="二进制文件"><a href="#二进制文件" class="header-anchor">#</a> 二进制文件</h2> <p>
+你可以用 Git 属性让 Git 知道哪些是二进制文件（以防它没有识别出来），并指示其如何处理这些文件。
+例如，一些文本文件是由机器产生的，没有办法进行比较，但是一些二进制文件可以比较。
+你将了解到怎样让 Git 区分这些文件。</p> <h3 id="识别二进制文件"><a href="#识别二进制文件" class="header-anchor">#</a> 识别二进制文件</h3> <p>有些文件表面上是文本文件，实质上应被作为二进制文件处理。
+例如，macOS 平台上的 Xcode 项目会包含一个以 <code class="literal">.pbxproj</code> 结尾的文件，
+它通常是一个记录项目构建配置等信息的 JSON（纯文本 Javascript 数据类型）数据集，由 IDE 写入磁盘。
+虽然技术上看它是由 UTF-8 编码的文本文件，但你并不会希望将它当作文本文件来处理，
+因为它其实是一个轻量级数据库——如果有两个人修改了它，你通常无法合并内容，diff 的输出也帮不上什么忙。
+它本应被机器处理。因此，你想把它当成二进制文件。</p> <p>要让 Git 把所有 <code class="literal">pbxproj</code> 文件当成二进制文件，在 <code class="literal">.gitattributes</code> 文件中如下设置：</p> <pre class="source language-ini"><code>*.pbxproj binary</code></pre> <p>现在，Git 不会尝试转换或修正回车换行（CRLF）问题，当你在项目中运行 <code class="literal">git show</code> 或 <code class="literal">git diff</code> 时，Git 也不会比较或打印该文件的变化。</p> <h3 id="比较二进制文件"><a href="#比较二进制文件" class="header-anchor">#</a> 比较二进制文件</h3> <p>你也可以使用 Git 属性来有效地比较两个二进制文件。
+秘诀在于，告诉 Git 怎么把你的二进制文件转化为文本格式，从而能够使用普通的 diff 方式进行对比。</p> <p>首先，让我们尝试用这个技术解决世人最头疼的问题之一：对 Microsoft Word 文档进行版本控制。
+大家都知道，Microsoft Word 几乎是世上最难缠的编辑器，尽管如此，大家还是在用它。
+如果想对 Word 文档进行版本控制，你可以把文件加入到 Git 库中，每次修改后提交即可。但这样做有什么实际意义呢？
+毕竟运行 <code class="literal">git diff</code> 命令后，你只能得到如下的结果：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git diff
+diff --git a/chapter1.docx b/chapter1.docx
+index 88839c4..4afcb7c 100644
+Binary files a/chapter1.docx and b/chapter1.docx differ</code></pre> <p>除了检出之后睁大眼睛逐行扫描，就真的没有办法直接比较两个不同版本的 Word 文档吗？
+Git 属性能很好地解决此问题。
+把下面这行文本加到你的 <code class="literal">.gitattributes</code> 文件中：</p> <pre class="source language-ini"><code>*.docx diff=<span style="font-style:italic;">word</span></code></pre> <p>这告诉 Git 当你尝试查看包含变更的比较结果时，所有匹配 <code class="literal">.docx</code> 模式的文件都应该使用“word”过滤器。
+“word”过滤器是什么？
+我们现在就来设置它。
+我们会对 Git 进行配置，令其能够借助 <code class="literal">docx2txt</code> 程序将 Word 文档转为可读文本文件，这样不同的文件间就能够正确比较了。</p> <p>首先，你需要安装 <code class="literal">docx2txt</code>；它可以从 <a href="https://sourceforge.net/projects/docx2txt" class="link">https://sourceforge.net/projects/docx2txt</a> 下载。
+按照 <code class="literal">INSTALL</code> 文件的说明，把它放到你的可执行路径下。
+接下来，你还需要写一个脚本把输出结果包装成 Git 支持的格式。
+在你的可执行路径下创建一个叫 <code class="literal">docx2txt</code> 文件，添加这些内容：</p> <pre class="language-bash"><code><span style="font-weight:bold;">#</span>!/bin/bash
+docx2txt.pl &quot;$1&quot; -</code></pre> <p>别忘了用 <code class="literal">chmod a+x</code> 给这个文件加上可执行权限。
+最后，你需要配置 Git 来使用这个脚本：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config diff.word.textconv docx2txt</code></pre> <p>现在如果在两个快照之间进行比较，Git 就会对那些以 <code class="literal">.docx</code> 结尾的文件应用“word”过滤器，即 <code class="literal">docx2txt</code>。
+这样你的 Word 文件就能被高效地转换成文本文件并进行比较了。</p> <p>作为例子，我把本书的第一章另存为 Word 文件，并提交到 Git 版本库。
+接着，往其中加入一个新的段落。
+运行 <code class="literal">git diff</code>，输出如下：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git diff
+diff --git a/chapter1.docx b/chapter1.docx
+index 0b013ca..ba25db5 100644
+--- a/chapter1.docx
++++ b/chapter1.docx
+@@ -2,6 +2,7 @@
+ This chapter will be about getting started with Git. We will begin at the beginning by explaining some background on version control tools, then move on to how to get Git running on your system and finally how to get it setup to start working with. At the end of this chapter you should understand why Git is around, why you should use it and you should be all setup to do so.
+ 1.1. About Version Control
+ What is &quot;version control&quot;, and why should you care? Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. For the examples in this book you will use software source code as the files being version controlled, though in reality you can do this with nearly any type of file on a computer.
++Testing: 1, 2, 3.
+ If you are a graphic or web designer and want to keep every version of an image or layout (which you would most certainly want to), a Version Control System (VCS) is a very wise thing to use. It allows you to revert files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also generally means that if you screw things up or lose files, you can easily recover. In addition, you get all this for very little overhead.
+ 1.1.1. Local Version Control Systems
+ Many people's version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they're clever). This approach is very common because it is so simple, but it is also incredibly error prone. It is easy to forget which directory you're in and accidentally write to the wrong file or copy over files you don't mean to.</code></pre> <p>Git 成功地挑出了我们添加的那句话“Testing: 1, 2, 3.”，一字不差。
+还算不上完美——格式上的变动显示不出来——但已经足够了。</p> <p>你还能用这个方法比较图像文件。
+其中一个办法是，在比较时对图像文件运用一个过滤器，提炼出 EXIF 信息——这是在大部分图像格式中都有记录的一种元数据。
+如果你下载并安装了 <code class="literal">exiftool</code> 程序，可以利用它将图像转换为关于元数据的文本信息，这样比较时至少能以文本的形式显示发生过的变动：
+将以下内容放到你的 <code class="literal">.gitattributes</code> 文件中：</p> <pre class="source language-ini"><code>*.png diff=<span style="font-style:italic;">exif</span></code></pre> <p>配置 Git 以使用此工具：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config diff.exif.textconv exiftool</code></pre> <p>如果在项目中替换了一个图像文件，运行 <code class="literal">git diff</code> 命令的结果如下：</p> <pre class="source language-diff"><code><span style="font-weight:bold;">diff --git a/image.png b/image.png</span>
+<span style="font-weight:bold;">index 88839c4..4afcb7c 100644</span>
+--- a/image.png
++++ b/image.png
+<span style="font-weight:bold;">@@ -1,12 +1,12 @@</span>
+ ExifTool Version Number         : 7.74
+-File Size                       : 70 kB
+-File Modification Date/Time     : 2009:04:21 07:02:45-07:00
++File Size                       : 94 kB
++File Modification Date/Time     : 2009:04:21 07:02:43-07:00
+ File Type                       : PNG
+ MIME Type                       : image/png
+-Image Width                     : 1058
+-Image Height                    : 889
++Image Width                     : 1056
++Image Height                    : 827
+ Bit Depth                       : 8
+ Color Type                      : RGB with Alpha</code></pre> <p>你一眼就能看出文件大小和图像尺寸发生了变化。</p> <h2 id="关键字展开"><a href="#关键字展开" class="header-anchor">#</a> 关键字展开</h2> <p>
+SVN 或 CVS 风格的关键字展开（keyword expansion）功能经常会被习惯于上述系统的开发者使用到。
+在 Git 中，这项功能有一个主要问题，就是你无法利用它往文件中加入其关联提交的相关信息，因为 Git 总是先对文件做校验和运算（译者注：Git 中提交对象的校验依赖于文件的校验和，而 Git 属性针对特定文件或路径，因此基于 Git 属性的关键字展开无法仅根据文件反推出对应的提交）。
+不过，我们可以在检出某个文件后对其注入文本，并在再次提交前删除这些文本。
+Git 属性提供了两种方法来达到这一目的。</p> <p>一种方法是，你可以把文件所对应数据对象的 SHA-1 校验和自动注入到文件中的 <code class="literal">$Id$</code> 字段。
+如果在一个或多个文件上设置了该属性，下次当你检出相关分支的时候，Git 会用相应数据对象的 SHA-1 值替换上述字段。
+注意，这不是提交对象的 SHA-1 校验和，而是数据对象本身的校验和。
+将以下内容放到你的 <code class="literal">.gitattributes</code> 文件中：</p> <pre class="source language-ini"><code>*.txt ident</code></pre> <p>在一个测试文件中添加一个 <code class="literal">$Id$</code> 引用：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'$Id$'</span> &gt; test.txt</code></pre> <p>当你下次检出文件时，Git 将注入数据对象的 SHA-1 校验和：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> rm test.txt
+<span style="font-weight:bold;">$</span> git checkout -- test.txt
+<span style="font-weight:bold;">$</span> cat test.txt
+<span style="font-weight:bold;">$</span>Id: 42812b7653c7b88933f8a9d6cad0ca16714b9bb3 $</code></pre> <p>然而，这个结果的用途比较有限。
+如果用过 CVS 或 Subversion 的关键字替换功能，我们会想加上一个时间戳信息——光有 SHA-1 校验和用途不大，
+它仅仅是个随机字符串，你无法凭字面值来区分不同 SHA-1 时间上的先后。</p> <p>因此 Git 属性提供了另一种方法：我们可以编写自己的过滤器来实现文件提交或检出时的关键字替换。
+一个过滤器由“clean”和“smudge”两个子过滤器组成。
+在 <code class="literal">.gitattributes</code> 文件中，你能对特定的路径设置一个过滤器，然后设置文件检出前的处理脚本（“smudge”，见 <a id="xref-filters_a" href="#filters_a" class="xref">“smudge”过滤器会在文件被检出时触发</a>）和文件暂存前的处理脚本（“clean”，见 <a id="xref-filters_b" href="#filters_b" class="xref">“clean”过滤器会在文件被暂存时触发</a>）。
+这两个过滤器能够被用来做各种有趣的事。</p> <figure id="filters_a" class="image"><div class="content"><img src="/assets/img/smudge.60b7c50d.png" alt="“smudge”过滤器会在文件被检出时触发。"></div> <figcaption>Figure 2. “smudge”过滤器会在文件被检出时触发</figcaption></figure> <figure id="filters_b" class="image"><div class="content"><img src="/assets/img/clean.fff12bc0.png" alt="“clean”过滤器会在文件被暂存时触发。"></div> <figcaption>Figure 3. “clean”过滤器会在文件被暂存时触发</figcaption></figure> <p>在（Git 源码中）实现这个特性的原始提交信息里给出了一个简单的例子：在提交前，用 <code class="literal">indent</code> 程序过滤所有 C 源码。
+你可以在 <code class="literal">.gitattributes</code> 文件中对 filter 属性设置“indent”过滤器来过滤 <code class="literal">*.c</code> 文件</p> <pre class="source language-ini"><code>*.c filter=<span style="font-style:italic;">indent</span></code></pre> <p>然后，通过以下配置，让 Git 知道“indent”过滤器在 smudge 和 clean 时分别该做什么：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config --global filter.indent.clean indent
+<span style="font-weight:bold;">$</span> git config --global filter.indent.smudge cat</code></pre> <p>在这个例子中，当你暂存 <code class="literal">*.c</code> 文件时，<code class="literal">indent</code> 程序会先被触发；在把它们检出回硬盘时，<code class="literal">cat</code> 程序会先被触发。
+<code class="literal">cat</code> 在这里没什么实际作用：它仅仅把输入的数据重新输出。
+这样的组合可以有效地在暂存前用 <code class="literal">indent</code> 过滤所有的 C 源码。</p> <p>另一个有趣的例子是实现 RCS 风格的 <code class="literal">$Date$</code> 关键字展开。
+要想演示这个例子，我们需要实现这样的一个小脚本：接受文件名参数，得到项目的最新提交日期，并把日期写入该文件。
+下面是一个实现了该功能的 Ruby 小脚本：</p> <pre class="source language-ruby"><code><span style="font-style:italic;">#! /usr/bin/env ruby</span>
+data = STDIN.read
+last_date = <span style="font-style:italic;">`git log --pretty=format:&quot;%ad&quot; -1`</span>
+puts data.gsub(<span style="font-style:italic;">'$Date$'</span>, <span style="font-style:italic;">'$Date: '</span> + last_date.to_s + <span style="font-style:italic;">'$'</span>)</code></pre> <p>这个脚本从 <code class="literal">git log</code> 中得到最新提交日期，将其注入所有输入文件的 <code class="literal">$Date$</code> 字段，并输出结果——你可以使用最顺手的语言轻松实现一个类似的脚本。
+把该脚本命名为 <code class="literal">expand_date</code>，放到你的可执行路径中。
+现在，你需要在 Git 中设置一个过滤器（就叫它 <code class="literal">dater</code> 吧），让它在检出文件时调用你的 <code class="literal">expand_date</code> 来注入时间戳，完成 smudge 操作。
+暂存文件时的 clean 操作则是用一行 Perl 表达式清除注入的内容：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config filter.dater.smudge expand_date
+<span style="font-weight:bold;">$</span> git config filter.dater.clean <span style="font-style:italic;">'perl -pe &quot;s/\\\$Date[^\\\$]*\\\$/\\\$Date\\\$/&quot;'</span></code></pre> <p>这段 Perl 代码会删除 <code class="literal">$Date$</code> 后面注入的内容，恢复它的原貌。
+过滤器终于准备完成了，是时候测试一下。创建一个带有 <code class="literal">$Date$</code> 关键字的文件，
+然后给它设置一个 Git 属性，关联我们的新过滤器：</p> <pre class="source language-ini"><code>date*.txt filter=<span style="font-style:italic;">dater</span></code></pre> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'# $Date$'</span> &gt; date_test.txt</code></pre> <p>提交该文件，并再次检出，你会发现关键字如期被替换了：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git add date_test.txt .gitattributes
+<span style="font-weight:bold;">$</span> git commit -m <span style="font-style:italic;">&quot;Testing date expansion in Git&quot;</span>
+<span style="font-weight:bold;">$</span> rm date_test.txt
+<span style="font-weight:bold;">$</span> git checkout date_test.txt
+<span style="font-weight:bold;">$</span> cat date_test.txt
+<span style="font-weight:bold;">#</span> $Date: Tue Apr 21 07:26:52 2009 -0700$</code></pre> <p>自定义过滤器真的很强大。
+不过你需要注意的是，因为 <code class="literal">.gitattributes</code> 文件会随着项目一起提交，而过滤器（例如这里的 <code class="literal">dater</code>）不会，所以过滤器有可能会失效。
+当你在设计这些过滤器时，要注重容错性——它们在出错时应该能优雅地退出，从而不至于影响项目的正常运行。</p> <h2 id="导出版本库"><a href="#导出版本库" class="header-anchor">#</a> 导出版本库</h2> <p>
+Git 属性在导出项目归档（archive）时也能发挥作用。</p> <h3 id="export-ignore"><a href="#export-ignore" class="header-anchor">#</a> export-ignore</h3> <p>当归档的时候，可以设置 Git 不导出某些文件和目录。
+如果你不想在归档中包含某个子目录或文件，但想把它们纳入项目的版本管理中，你可以在 <code class="literal">export-ignore</code> 属性中指定它们。</p> <p>例如，假设你在 <code class="literal">test/</code> 子目录下有一些测试文件，不希望它们被包含在项目导出的压缩包（tarball）中。
+你可以增加下面这行到 Git 属性文件中：</p> <pre class="source language-ini"><code>test/ export-ignore</code></pre> <p>现在，当你运行 <code class="literal">git archive</code> 来创建项目的压缩包时，那个目录不会被包括在归档中。</p> <h3 id="export-subst"><a href="#export-subst" class="header-anchor">#</a> export-subst</h3> <p>在导出文件进行部署的时候，你可以将 <code class="literal">git log</code> 的格式化和关键字展开处理应用到标记了
+<code class="literal">export-subst</code> 属性的部分文件。</p> <p>举个例子，如果你想在项目中包含一个叫做 <code class="literal">LAST_COMMIT</code> 的文件，
+并在运行 <code class="literal">git archive</code> 的时候自动向它注入最新提交的元数据，可以像这样设置
+<code class="literal">.gitattributes</code> 和 <code class="literal">LAST_COMMIT</code> 该文件：</p> <pre class="source language-ini"><code>LAST_COMMIT export-subst</code></pre> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'Last commit date: $Format:%cd by %aN$'</span> &gt; LAST_COMMIT
+<span style="font-weight:bold;">$</span> git add LAST_COMMIT .gitattributes
+<span style="font-weight:bold;">$</span> git commit -am <span style="font-style:italic;">'adding LAST_COMMIT file for archives'</span></code></pre> <p>运行 <code class="literal">git archive</code> 之后，归档文件的内容会被替换成这样：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git archive HEAD | tar xCf ../deployment-testing -
+<span style="font-weight:bold;">$</span> cat ../deployment-testing/LAST_COMMIT
+Last commit date: Tue Apr 21 08:38:48 2009 -0700 by Scott Chacon</code></pre> <p>你也可以用诸如提交信息或者任意的 <code class="literal">git notes</code> 进行替换，并且 <code class="literal">git log</code> 还能做简单的字词折行：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'$Format:Last commit: %h by %aN at %cd%n%+w(76,6,9)%B$'</span> &gt; LAST_COMMIT
+<span style="font-weight:bold;">$</span> git commit -am <span style="font-style:italic;">'export-subst uses git log'</span><span style="font-weight:bold;font-style:italic;">\'</span><span style="border:1px solid #FF0000;">'</span>s custom formatter
+
+git archive 直接使用 git log 的 `pretty=format:`
+处理器，并在输出中移除两侧的 `$Format:` 和 `$`
+标记。
+'
+<span style="font-weight:bold;">$</span> git archive @ | tar xfO - LAST_COMMIT
+Last commit: 312ccc8 by Jim Hill at Fri May 8 09:14:04 2015 -0700
+       export-subst uses git log's custom formatter
+
+         git archive uses git log's `pretty=format:` processor directly, and
+         strips the surrounding `$Format:` and `$` markup from the output.</code></pre> <p>由此得到的归档适用于（当前的）部署工作。然而和其他的导出归档一样，它并不适用于后继的部署工作。</p> <h2 id="合并策略"><a href="#合并策略" class="header-anchor">#</a> 合并策略</h2> <p>
+通过 Git 属性，你还能对项目中的特定文件指定不同的合并策略。
+一个非常有用的选项就是，告诉 Git 当特定文件发生冲突时不要尝试合并它们，而是直接使用你这边的内容。</p> <p>考虑如下场景：项目中有一个分叉的或者定制过的主题分支，你希望该分支上的更改能合并回你的主干分支，同时需要忽略其中某些文件。此时这个合并策略就能派上用场。
+假设你有一个数据库设置文件 <code class="literal">database.xml</code>，在两个分支中它是不同的，而你想合并另一个分支到你的分支上，又不想弄乱该数据库文件。
+你可以设置属性如下：</p> <pre class="source language-ini"><code>database.xml merge=<span style="font-style:italic;">ours</span></code></pre> <p>然后定义一个虚拟的合并策略，叫做 <code class="literal">ours</code>：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config --global merge.ours.driver true</code></pre> <p>如果你合并了另一个分支，<code class="literal">database.xml</code> 文件不会有合并冲突，相反会显示如下信息：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git merge topic
+Auto-merging database.xml
+Merge made by recursive.</code></pre> <p>这里，<code class="literal">database.xml</code> 保持了主干分支中的原始版本。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-8/1.html" class="prev">
+        配置 Git
+      </a></span> <span class="next"><a href="/chapter-8/3.html">
+        Git 钩子
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/29.95a71153.js" defer></script>
+  </body>
+</html>

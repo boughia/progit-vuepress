@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git 对象 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/22.293aa5c6.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable router-link-active open"><span>10. Git 内部原理</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-10/1.html" class="sidebar-link">底层命令与上层命令</a></li><li><a href="/chapter-10/2.html" class="active sidebar-link">Git 对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-10/2.html#树对象" class="sidebar-link">树对象</a></li><li class="sidebar-sub-header"><a href="/chapter-10/2.html#提交对象" class="sidebar-link">提交对象</a></li><li class="sidebar-sub-header"><a href="/chapter-10/2.html#对象存储" class="sidebar-link">对象存储</a></li></ul></li><li><a href="/chapter-10/3.html" class="sidebar-link">Git 引用</a></li><li><a href="/chapter-10/4.html" class="sidebar-link">包文件</a></li><li><a href="/chapter-10/5.html" class="sidebar-link">引用规范</a></li><li><a href="/chapter-10/6.html" class="sidebar-link">传输协议</a></li><li><a href="/chapter-10/7.html" class="sidebar-link">维护与数据恢复</a></li><li><a href="/chapter-10/8.html" class="sidebar-link">环境变量</a></li><li><a href="/chapter-10/9.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git-对象"><a href="#git-对象" class="header-anchor">#</a> Git 对象</h1> <p>Git 是一个内容寻址文件系统，听起来很酷。但这是什么意思呢？
+这意味着，Git 的核心部分是一个简单的键值对数据库（key-value data store）。
+你可以向 Git 仓库中插入任意类型的内容，它会返回一个唯一的键，通过该键可以在任意时刻再次取回该内容。</p> <p>可以通过底层命令 <code class="literal">git hash-object</code> 来演示上述效果——该命令可将任意数据保存于
+<code class="literal">.git/objects</code> 目录（即 <strong>对象数据库</strong>），并返回指向该数据对象的唯一的键。</p> <p>首先，我们需要初始化一个新的 Git 版本库，并确认 <code class="literal">objects</code> 目录为空：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git init test
+Initialized empty Git repository in /tmp/test/.git/
+<span style="font-weight:bold;">$</span> cd test
+<span style="font-weight:bold;">$</span> find .git/objects
+.git/objects
+.git/objects/info
+.git/objects/pack
+<span style="font-weight:bold;">$</span> find .git/objects -type f</code></pre> <p>可以看到 Git 对 <code class="literal">objects</code> 目录进行了初始化，并创建了 <code class="literal">pack</code> 和 <code class="literal">info</code> 子目录，但均为空。
+接着，我们用 <code class="literal">git hash-object</code> 创建一个新的数据对象并将它手动存入你的新 Git 数据库中：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'test content'</span> | git hash-object -w --stdin
+d670460b4b4aece5915caf5c68d12f560a9fe3e4</code></pre> <p>在这种最简单的形式中，<code class="literal">git hash-object</code> 会接受你传给它的东西，而它只会返回可以存储在 Git 仓库中的唯一键。
+<code class="literal">-w</code> 选项会指示该命令不要只返回键，还要将该对象写入数据库中。
+最后，<code class="literal">--stdin</code> 选项则指示该命令从标准输入读取内容；若不指定此选项，则须在命令尾部给出待存储文件的路径。</p> <p>此命令输出一个长度为 40 个字符的校验和。
+这是一个 SHA-1 哈希值——一个将待存储的数据外加一个头部信息（header）一起做 SHA-1 校验运算而得的校验和。后文会简要讨论该头部信息。
+现在我们可以查看 Git 是如何存储数据的：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> find .git/objects -type f
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</code></pre> <p>如果你再次查看 <code class="literal">objects</code> 目录，那么可以在其中找到一个与新内容对应的文件。
+这就是开始时 Git 存储内容的方式——一个文件对应一条内容，
+以该内容加上特定头部信息一起的 SHA-1 校验和为文件命名。
+校验和的前两个字符用于命名子目录，余下的 38 个字符则用作文件名。</p> <p>一旦你将内容存储在了对象数据库中，那么可以通过 <code class="literal">cat-file</code> 命令从 Git 那里取回数据。
+这个命令简直就是一把剖析 Git 对象的瑞士军刀。
+为 <code class="literal">cat-file</code> 指定 <code class="literal">-p</code> 选项可指示该命令自动判断内容的类型，并为我们显示大致的内容：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+test content</code></pre> <p>至此，你已经掌握了如何向 Git 中存入内容，以及如何将它们取出。
+我们同样可以将这些操作应用于文件中的内容。
+例如，可以对一个文件进行简单的版本控制。
+首先，创建一个新文件并将其内容存入数据库：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'version 1'</span> &gt; test.txt
+<span style="font-weight:bold;">$</span> git hash-object -w test.txt
+83baae61804e65cc73a7201a7252750c76066a30</code></pre> <p>接着，向文件里写入新内容，并再次将其存入数据库：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'version 2'</span> &gt; test.txt
+<span style="font-weight:bold;">$</span> git hash-object -w test.txt
+1f7a7a472abf3dd9643fd615f6da379c4acb3e3a</code></pre> <p>对象数据库记录下了该文件的两个不同版本，当然之前我们存入的第一条内容也还在：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> find .git/objects -type f
+.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a
+.git/objects/83/baae61804e65cc73a7201a7252750c76066a30
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4</code></pre> <p>现在可以在删掉 <code class="literal">test.txt</code> 的本地副本，然后用 Git 从对象数据库中取回它的第一个版本：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p 83baae61804e65cc73a7201a7252750c76066a30 &gt; test.txt
+<span style="font-weight:bold;">$</span> cat test.txt
+version 1</code></pre> <p>或者第二个版本：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p 1f7a7a472abf3dd9643fd615f6da379c4acb3e3a &gt; test.txt
+<span style="font-weight:bold;">$</span> cat test.txt
+version 2</code></pre> <p>然而，记住文件的每一个版本所对应的 SHA-1 值并不现实；另一个问题是，在这个（简单的版本控制）系统中，文件名并没有被保存——我们仅保存了文件的内容。
+上述类型的对象我们称之为 <strong>数据对象（blob object）</strong>。
+利用 <code class="literal">git cat-file -t</code> 命令，可以让 Git 告诉我们其内部存储的任何对象类型，只要给定该对象的 SHA-1 值：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -t 1f7a7a472abf3dd9643fd615f6da379c4acb3e3a
+blob</code></pre> <h2 id="树对象"><a href="#树对象" class="header-anchor">#</a> 树对象</h2> <p>接下来要探讨的 Git 对象类型是树对象（tree object），它能解决文件名保存的问题，也允许我们将多个文件组织到一起。
+Git 以一种类似于 UNIX 文件系统的方式存储内容，但作了些许简化。
+所有内容均以树对象和数据对象的形式存储，其中树对象对应了 UNIX 中的目录项，数据对象则大致上对应了 inodes 或文件内容。
+一个树对象包含了一条或多条树对象记录（tree entry），每条记录含有一个指向数据对象或者子树对象的 SHA-1 指针，以及相应的模式、类型、文件名信息。
+例如，某项目当前对应的最新树对象可能是这样的：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p master^{tree}
+100644 blob a906cb2a4a904a152e80877d4088654daad0c859      README
+100644 blob 8f94139338f9404f26296befa88755fc2598c289      Rakefile
+040000 tree 99f1a6d12cb4b6f19c8655fca46c3ecf317074e0      lib</code></pre> <p><code class="literal">master^{tree}</code> 语法表示 <code class="literal">master</code> 分支上最新的提交所指向的树对象。
+请注意，<code class="literal">lib</code> 子目录（所对应的那条树对象记录）并不是一个数据对象，而是一个指针，其指向的是另一个树对象：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p 99f1a6d12cb4b6f19c8655fca46c3ecf317074e0
+100644 blob 47c6340d6459e05787f644c2447d2595f5d3a54b      simplegit.rb</code></pre> <aside title="Note" epub:type="note" class="admonition note custom-block tip"><p class="custom-block-title">提示</p> <div class="content"><p>你可能会在某些 shell 中使用 <code class="literal">master^{tree}</code> 语法时遇到错误。</p> <p>在 Windows 的 CMD 中，字符 <code class="literal">^</code> 被用于转义，因此你必须双写它以避免出现问题：<code class="literal">git cat-file -p master^^{tree}</code>。
+在 PowerShell 中使用字符 {} 时则必须用引号引起来，以此来避免参数解析错误：<code class="literal">git cat-file -p 'master^{tree}'</code>。</p> <p>在 ZSH 中，字符 <code class="literal">^</code> 被用在通配模式（globbing）中，因此你必须将整个表达式用引号引起来：<code class="literal">git cat-file -p &quot;master^{tree}&quot;</code>。</p></div></aside> <p>从概念上讲，Git 内部存储的数据有点像这样：</p> <figure class="image"><div class="content"><img src="/assets/img/data-model-1.e0ca06a2.png" alt="简化版的 Git 数据模型。"></div> <figcaption>Figure 1. 简化版的 Git 数据模型。</figcaption></figure> <p>你可以轻松创建自己的树对象。
+通常，Git 根据某一时刻暂存区（即 index 区域，下同）所表示的状态创建并记录一个对应的树对象，
+如此重复便可依次记录（某个时间段内）一系列的树对象。
+因此，为创建一个树对象，首先需要通过暂存一些文件来创建一个暂存区。
+可以通过底层命令 <code class="literal">git update-index</code> 为一个单独文件——我们的 test.txt 文件的首个版本——创建一个暂存区。
+利用该命令，可以把 <code class="literal">test.txt</code> 文件的首个版本人为地加入一个新的暂存区。
+必须为上述命令指定 <code class="literal">--add</code> 选项，因为此前该文件并不在暂存区中（我们甚至都还没来得及创建一个暂存区呢）；
+同样必需的还有 <code class="literal">--cacheinfo</code> 选项，因为将要添加的文件位于 Git 数据库中，而不是位于当前目录下。
+同时，需要指定文件模式、SHA-1 与文件名：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git update-index --add --cacheinfo 100644 <span style="font-weight:bold;font-style:italic;">\</span>
+  83baae61804e65cc73a7201a7252750c76066a30 test.txt</code></pre> <p>本例中，我们指定的文件模式为 <code class="literal">100644</code>，表明这是一个普通文件。
+其他选择包括：<code class="literal">100755</code>，表示一个可执行文件；<code class="literal">120000</code>，表示一个符号链接。
+这里的文件模式参考了常见的 UNIX 文件模式，但远没那么灵活——上述三种模式即是
+Git 文件（即数据对象）的所有合法模式（当然，还有其他一些模式，但用于目录项和子模块）。</p> <p>现在，可以通过 <code class="literal">git write-tree</code> 命令将暂存区内容写入一个树对象。
+此处无需指定 <code class="literal">-w</code> 选项——如果某个树对象此前并不存在的话，当调用此命令时，
+它会根据当前暂存区状态自动创建一个新的树对象：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git write-tree
+d8329fc1cc938780ffdd9f94e0d364e0ea74f579
+<span style="font-weight:bold;">$</span> git cat-file -p d8329fc1cc938780ffdd9f94e0d364e0ea74f579
+100644 blob 83baae61804e65cc73a7201a7252750c76066a30      test.txt</code></pre> <p>不妨用之前见过的 <code class="literal">git cat-file</code> 命令验证一下它确实是一个树对象：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -t d8329fc1cc938780ffdd9f94e0d364e0ea74f579
+tree</code></pre> <p>接着我们来创建一个新的树对象，它包括 <code class="literal">test.txt</code> 文件的第二个版本，以及一个新的文件：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'new file'</span> &gt; new.txt
+<span style="font-weight:bold;">$</span> git update-index --add --cacheinfo 100644 <span style="font-weight:bold;font-style:italic;">\</span>
+  1f7a7a472abf3dd9643fd615f6da379c4acb3e3a test.txt
+<span style="font-weight:bold;">$</span> git update-index --add new.txt</code></pre> <p>暂存区现在包含了 <code class="literal">test.txt</code> 文件的新版本，和一个新文件：<code class="literal">new.txt</code>。
+记录下这个目录树（将当前暂存区的状态记录为一个树对象），然后观察它的结构：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git write-tree
+0155eb4229851634a0f03eb265b69f5a2d56f341
+<span style="font-weight:bold;">$</span> git cat-file -p 0155eb4229851634a0f03eb265b69f5a2d56f341
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92      new.txt
+100644 blob 1f7a7a472abf3dd9643fd615f6da379c4acb3e3a      test.txt</code></pre> <p>我们注意到，新的树对象包含两条文件记录，同时 test.txt 的 SHA-1 值（<code class="literal">1f7a7a</code>）是先前值的“第二版”。
+只是为了好玩：你可以将第一个树对象加入第二个树对象，使其成为新的树对象的一个子目录。
+通过调用 <code class="literal">git read-tree</code> 命令，可以把树对象读入暂存区。
+本例中，可以通过对该命令指定 <code class="literal">--prefix</code> 选项，将一个已有的树对象作为子树读入暂存区：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git read-tree --prefix=bak d8329fc1cc938780ffdd9f94e0d364e0ea74f579
+<span style="font-weight:bold;">$</span> git write-tree
+3c4e9cd789d88d8d89c1073707c3585e41b0e614
+<span style="font-weight:bold;">$</span> git cat-file -p 3c4e9cd789d88d8d89c1073707c3585e41b0e614
+040000 tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579      bak
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92      new.txt
+100644 blob 1f7a7a472abf3dd9643fd615f6da379c4acb3e3a      test.txt</code></pre> <p>如果基于这个新的树对象创建一个工作目录，你会发现工作目录的根目录包含两个文件以及一个名为
+<code class="literal">bak</code> 的子目录，该子目录包含 <code class="literal">test.txt</code> 文件的第一个版本。
+可以认为 Git 内部存储着的用于表示上述结构的数据是这样的：</p> <figure class="image"><div class="content"><img src="/assets/img/data-model-2.b3e55780.png" alt="当前 Git 的数据内容结构。"></div> <figcaption>Figure 2. 当前 Git 的数据内容结构。</figcaption></figure> <h2 id="提交对象"><a href="#提交对象" class="header-anchor">#</a> 提交对象</h2> <p>如果你做完了以上所有操作，那么现在就有了三个树对象，分别代表我们想要跟踪的不同项目快照。
+然而问题依旧：若想重用这些快照，你必须记住所有三个 SHA-1 哈希值。
+并且，你也完全不知道是谁保存了这些快照，在什么时刻保存的，以及为什么保存这些快照。
+而以上这些，正是提交对象（commit object）能为你保存的基本信息。</p> <p>可以通过调用 <code class="literal">commit-tree</code> 命令创建一个提交对象，为此需要指定一个树对象的 SHA-1 值，以及该提交的父提交对象（如果有的话）。
+我们从之前创建的第一个树对象开始：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'first commit'</span> | git commit-tree d8329f
+fdf4fc3344e67ab068f836878b6c4951e3b15f3d</code></pre> <p>由于创建时间和作者数据不同，你现在会得到一个不同的散列值。
+请将本章后续内容中的提交和标签的散列值替换会你自己的校验和。
+现在可以通过 <code class="literal">git cat-file</code> 命令查看这个新提交对象：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git cat-file -p fdf4fc3
+tree d8329fc1cc938780ffdd9f94e0d364e0ea74f579
+author Scott Chacon &lt;schacon@gmail.com&gt; 1243040974 -0700
+committer Scott Chacon &lt;schacon@gmail.com&gt; 1243040974 -0700
+
+first commit</code></pre> <p>提交对象的格式很简单：它先指定一个顶层树对象，代表当前项目快照；
+然后是可能存在的父提交（前面描述的提交对象并不存在任何父提交）；
+之后是作者/提交者信息（依据你的 <code class="literal">user.name</code> 和 <code class="literal">user.email</code> 配置来设定，外加一个时间戳）；
+留空一行，最后是提交注释。</p> <p>接着，我们将创建另两个提交对象，它们分别引用各自的上一个提交（作为其父提交对象）：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'second commit'</span> | git commit-tree 0155eb -p fdf4fc3
+cac0cab538b970a37ea1e769cbbde608743bc96d
+<span style="font-weight:bold;">$</span> echo <span style="font-style:italic;">'third commit'</span>  | git commit-tree 3c4e9c -p cac0cab
+1a410efbd13591db07496601ebc7a059dd55cfe9</code></pre> <p>这三个提交对象分别指向之前创建的三个树对象快照中的一个。
+现在，如果对最后一个提交的 SHA-1 值运行 <code class="literal">git log</code> 命令，会出乎意料的发现，你已有一个货真价实的、可由 <code class="literal">git log</code> 查看的 Git 提交历史了：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git log --stat 1a410e
+commit 1a410efbd13591db07496601ebc7a059dd55cfe9
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri May 22 18:15:24 2009 -0700
+
+	third commit
+
+ bak/test.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cac0cab538b970a37ea1e769cbbde608743bc96d
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri May 22 18:14:29 2009 -0700
+
+	second commit
+
+ new.txt  | 1 +
+ test.txt | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit fdf4fc3344e67ab068f836878b6c4951e3b15f3d
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri May 22 18:09:34 2009 -0700
+
+    first commit
+
+ test.txt | 1 +
+ 1 file changed, 1 insertion(+)</code></pre> <p>太神奇了：
+就在刚才，你没有借助任何上层命令，仅凭几个底层操作便完成了一个 Git 提交历史的创建。
+这就是每次我们运行 <code class="literal">git add</code> 和 <code class="literal">git commit</code> 命令时，Git 所做的工作实质就是将被改写的文件保存为数据对象，
+更新暂存区，记录树对象，最后创建一个指明了顶层树对象和父提交的提交对象。
+这三种主要的 Git 对象——数据对象、树对象、提交对象——最初均以单独文件的形式保存在 <code class="literal">.git/objects</code> 目录下。
+下面列出了目前示例目录内的所有对象，辅以各自所保存内容的注释：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> find .git/objects -type f
+.git/objects/01/55eb4229851634a0f03eb265b69f5a2d56f341 # tree 2
+.git/objects/1a/410efbd13591db07496601ebc7a059dd55cfe9 # commit 3
+.git/objects/1f/7a7a472abf3dd9643fd615f6da379c4acb3e3a # test.txt v2
+.git/objects/3c/4e9cd789d88d8d89c1073707c3585e41b0e614 # tree 3
+.git/objects/83/baae61804e65cc73a7201a7252750c76066a30 # test.txt v1
+.git/objects/ca/c0cab538b970a37ea1e769cbbde608743bc96d # commit 2
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4 # 'test content'
+.git/objects/d8/329fc1cc938780ffdd9f94e0d364e0ea74f579 # tree 1
+.git/objects/fa/49b077972391ad58037050f2a75f74e3671e92 # new.txt
+.git/objects/fd/f4fc3344e67ab068f836878b6c4951e3b15f3d # commit 1</code></pre> <p>如果跟踪所有的内部指针，将得到一个类似下面的对象关系图：</p> <figure class="image"><div class="content"><img src="/assets/img/data-model-3.e42601ac.png" alt="你的 Git 目录下所有可达的对象。"></div> <figcaption>Figure 3. 你的 Git 目录下所有可达的对象。</figcaption></figure> <h2 id="对象存储"><a href="#对象存储" class="header-anchor">#</a> 对象存储</h2> <p>前文曾提及，你向 Git 仓库提交的所有对象都会有个头部信息一并被保存。
+让我们略花些时间来看看 Git 是如何存储其对象的。
+通过在 Ruby 脚本语言中交互式地演示，你将看到一个数据对象——本例中是字符串“what is up, doc?”——是如何被存储的。</p> <p>可以通过 <code class="literal">irb</code> 命令启动 Ruby 的交互模式：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> irb
+<span style="font-weight:bold;">&gt;</span>&gt; content = <span style="font-style:italic;">&quot;what is up, doc?&quot;</span>
+=&gt; &quot;what is up, doc?&quot;</code></pre> <p>Git 首先会以识别出的对象的类型作为开头来构造一个头部信息，本例中是一个“blob”字符串。
+接着 Git 会在头部的第一部分添加一个空格，随后是数据内容的字节数，最后是一个空字节（null byte）：</p> <pre class="language-bash"><code><span style="font-weight:bold;">&gt;</span>&gt; header = <span style="font-style:italic;">&quot;blob #{content.length}\0&quot;</span>
+=&gt; &quot;blob 16\u0000&quot;</code></pre> <p>Git 会将上述头部信息和原始数据拼接起来，并计算出这条新内容的 SHA-1 校验和。
+在 Ruby 中可以这样计算 SHA-1 值——先通过 <code class="literal">require</code> 命令导入 SHA-1 digest 库，
+然后对目标字符串调用 <code class="literal">Digest::SHA1.hexdigest()</code>：</p> <pre class="language-bash"><code><span style="font-weight:bold;">&gt;</span>&gt; store = header + content
+=&gt; &quot;blob 16\u0000what is up, doc?&quot;
+<span style="font-weight:bold;">&gt;</span>&gt; require <span style="font-style:italic;">'digest/sha1'</span>
+=&gt; true
+<span style="font-weight:bold;">&gt;</span>&gt; sha1 = Digest::SHA1.hexdigest(store)
+=&gt; &quot;bd9dbf5aae1a3862dd1526723246b20206e5fc37&quot;</code></pre> <p>我们来比较一下 <code class="literal">git hash-object</code> 的输出。
+这里使用了 <code class="literal">echo -n</code> 以避免在输出中添加换行。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> echo -n <span style="font-style:italic;">&quot;what is up, doc?&quot;</span> | git hash-object --stdin
+bd9dbf5aae1a3862dd1526723246b20206e5fc37</code></pre> <p>Git 会通过 zlib 压缩这条新内容。在 Ruby 中可以借助 zlib 库做到这一点。
+先导入相应的库，然后对目标内容调用 <code class="literal">Zlib::Deflate.deflate()</code>：</p> <pre class="language-bash"><code><span style="font-weight:bold;">&gt;</span>&gt; require <span style="font-style:italic;">'zlib'</span>
+=&gt; true
+<span style="font-weight:bold;">&gt;</span>&gt; zlib_content = Zlib::Deflate.deflate(store)
+=&gt; &quot;x\x9CK\xCA\xC9OR04c(\xCFH,Q\xC8,V(-\xD0QH\xC9O\xB6\a\x00_\x1C\a\x9D&quot;</code></pre> <p>最后，需要将这条经由 zlib 压缩的内容写入磁盘上的某个对象。
+要先确定待写入对象的路径（SHA-1 值的前两个字符作为子目录名称，后 38 个字符则作为子目录内文件的名称）。
+如果该子目录不存在，可以通过 Ruby 中的 <code class="literal">FileUtils.mkdir_p()</code> 函数来创建它。
+接着，通过 <code class="literal">File.open()</code> 打开这个文件。最后，对上一步中得到的文件句柄调用 <code class="literal">write()</code> 函数，以向目标文件写入之前那条 zlib 压缩过的内容：</p> <pre class="language-bash"><code><span style="font-weight:bold;">&gt;</span>&gt; path = <span style="font-style:italic;">'.git/objects/'</span> + sha1[0,2] + <span style="font-style:italic;">'/'</span> + sha1[2,38]
+=&gt; &quot;.git/objects/bd/9dbf5aae1a3862dd1526723246b20206e5fc37&quot;
+<span style="font-weight:bold;">&gt;</span>&gt; require <span style="font-style:italic;">'fileutils'</span>
+=&gt; true
+<span style="font-weight:bold;">&gt;</span>&gt; FileUtils.mkdir_p(File.dirname(path))
+=&gt; &quot;.git/objects/bd&quot;
+<span style="font-weight:bold;">&gt;</span>&gt; File.open(path, <span style="font-style:italic;">'w'</span>) { |f| f.write zlib_content }
+=&gt; 32</code></pre> <p>我们用 <code class="literal">git cat-file</code> 查看一下该对象的内容：</p> <pre class="language-bash"><code>---
+<span style="font-weight:bold;">$</span> git cat-file -p bd9dbf5aae1a3862dd1526723246b20206e5fc37
+what is up, doc?
+---</code></pre> <p>就是这样——你已创建了一个有效的 Git 数据对象。</p> <p>所有的 Git 对象均以这种方式存储，区别仅在于类型标识——另两种对象类型的头部信息以字符串“commit”或“tree”开头，而不是“blob”。
+另外，虽然数据对象的内容几乎可以是任何东西，但提交对象和树对象的内容却有各自固定的格式。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-10/1.html" class="prev">
+        底层命令与上层命令
+      </a></span> <span class="next"><a href="/chapter-10/3.html">
+        Git 引用
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/22.293aa5c6.js" defer></script>
+  </body>
+</html>

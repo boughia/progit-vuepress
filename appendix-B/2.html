@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Libgit2 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/46.9c95c270.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable router-link-active open"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/appendix-B/1.html" class="sidebar-link">命令行 Git 方式</a></li><li><a href="/appendix-B/2.html" class="active sidebar-link">Libgit2</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/appendix-B/2.html#高级功能" class="sidebar-link">高级功能</a></li><li class="sidebar-sub-header"><a href="/appendix-B/2.html#其它绑定" class="sidebar-link">其它绑定</a></li><li class="sidebar-sub-header"><a href="/appendix-B/2.html#扩展阅读" class="sidebar-link">扩展阅读</a></li></ul></li><li><a href="/appendix-B/3.html" class="sidebar-link">JGit</a></li><li><a href="/appendix-B/4.html" class="sidebar-link">go-git</a></li><li><a href="/appendix-B/5.html" class="sidebar-link">Dulwich</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="libgit2"><a href="#libgit2" class="header-anchor">#</a> Libgit2</h1> <p>©
+另外一种可以供你使用的是 Libgit2。
+Libgit2 是一个 Git 的非依赖性的工具，它致力于为其他程序使用 Git 提供更好的 API。
+你可以在 <a href="https://libgit2.org" class="link">https://libgit2.org</a> 找到它。</p> <p>首先，让我们来看一下 C API 长啥样。
+这是一个旋风式旅行。</p> <pre class="source language-c"><code><span style="font-style:italic;">// 打开一个版本库</span>
+git_repository *repo;
+<span style="font-weight:bold;">int</span> error = git_repository_open(&amp;repo, <span style="font-style:italic;">&quot;/path/to/repository&quot;</span>);
+
+<span style="font-style:italic;">// 逆向引用 HEAD 到一个提交</span>
+git_object *head_commit;
+error = git_revparse_single(&amp;head_commit, repo, <span style="font-style:italic;">&quot;HEAD^{commit}&quot;</span>);
+git_commit *commit = (git_commit*)head_commit;
+
+<span style="font-style:italic;">// 显示这个提交的一些详情</span>
+printf(<span style="font-style:italic;">&quot;%s&quot;</span>, git_commit_message(commit));
+<span style="font-weight:bold;">const</span> git_signature *author = git_commit_author(commit);
+printf(<span style="font-style:italic;">&quot;%s &lt;%s&gt;</span><span style="font-weight:bold;font-style:italic;">\n</span><span style="font-style:italic;">&quot;</span>, author-&gt;name, author-&gt;email);
+<span style="font-weight:bold;">const</span> git_oid *tree_id = git_commit_tree_id(commit);
+
+<span style="font-style:italic;">// 清理现场</span>
+git_commit_free(commit);
+git_repository_free(repo);</code></pre> <p>前两行打开一个 Git 版本库。
+这个 <code class="literal">git_repository</code> 类型代表了一个在内存中带有缓存的指向一个版本库的句柄。
+这是最简单的方法，只是你必须知道一个版本库的工作目录或者一个 <code class="literal">.git</code> 文件夹的精确路径。
+另外还有 <code class="literal">git_repository_open_ext</code> ，它包括了带选项的搜索， <code class="literal">git_clone</code> 及其同类可以用来做远程版本库的本地克隆， <code class="literal">git_repository_init</code> 则可以创建一个全新的版本库。</p> <p>第二段代码使用了一种 rev-parse 语法（要了解更多，请看 <a id="xref--ch07-git-tools--_branch_references" href="/chapter-7/1.html#分支引用" class="xref">分支引用</a> ）来得到 HEAD 真正指向的提交。
+返回类型是一个 <code class="literal">git_object</code> 指针，它指代位于版本库里的 Git 对象数据库中的某个东西。
+<code class="literal">git_object</code> 实际上是几种不同的对象的“父”类型，每个“子”类型的内存布局和 <code class="literal">git_object</code> 是一样的，所以你能安全地把它们转换为正确的类型。
+在上面的例子中， <code class="literal">git_object_type(commit)</code> 会返回 <code class="literal">GIT_OBJ_COMMIT</code> ，所以转换成 <code class="literal">git_commit</code> 指针是安全的。</p> <p>下一段展示了如何访问一个提交的详情。
+最后一行使用了 <code class="literal">git_oid</code> 类型，这是 Libgit2 用来表示一个 SHA-1 哈希的方法。</p> <p>从这个例子中，我们可以看到一些模式：</p> <div class="itemized-list"><ul><li><span class="principal">如果你声明了一个指针，并在一个 Libgit2 调用中传递一个引用，那么这个调用可能返回一个 int 类型的错误码。
+值 <code class="literal">0</code> 表示成功，比它小的则是一个错误。</span></li> <li><span class="principal">如果 Libgit2 为你填入一个指针，那么你有责任释放它。</span></li> <li><span class="principal">如果 Libgit2 在一个调用中返回一个 <code class="literal">const</code> 指针，你不需要释放它，但是当它所指向的对象被释放时它将不可用。</span></li> <li><span class="principal">用 C 来写有点蛋疼。</span></li></ul></div> <p>
+最后一点意味着你应该不会在使用 Libgit2 时编写 C 语言程序。
+但幸运的是，有许多可用的各种语言的绑定，能让你在特定的语言和环境中更加容易的操作 Git 版本库。
+我们来看一下下面这个用 Libgit2 的 Ruby 绑定写成的例子，它叫 Rugged，你可以在 <a href="https://github.com/libgit2/rugged" class="link">https://github.com/libgit2/rugged</a> 找到它。</p> <pre class="source language-ruby"><code>repo = Rugged::Repository.new(<span style="font-style:italic;">'path/to/repository'</span>)
+commit = repo.head.target
+puts commit.message
+puts <span style="font-style:italic;">&quot;</span><span style="font-weight:bold;font-style:italic;">#{</span>commit.author[<span style="font-style:italic;">:name</span>]<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;"> &lt;</span><span style="font-weight:bold;font-style:italic;">#{</span>commit.author[<span style="font-style:italic;">:email</span>]<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&gt;&quot;</span>
+tree = commit.tree</code></pre> <p>你可以发现，代码看起来更加清晰了。
+首先， Rugged 使用异常机制，它可以抛出类似于 <code class="literal">ConfigError</code> 或者 <code class="literal">ObjectError</code> 之类的东西来告知错误的情况。
+其次，不需要明确资源释放，因为 Ruby 是支持垃圾回收的。
+我们来看一个稍微复杂一点的例子：从头开始制作一个提交。</p> <pre class="source language-ruby"><code>blob_id = repo.write(<span style="font-style:italic;">&quot;Blob contents&quot;</span>, <span style="font-style:italic;">:blob</span>) <i data-value="1" class="conum">①</i>
+
+index = repo.index
+index.read_tree(repo.head.target.tree)
+index.add(<span style="font-style:italic;">:path</span> =&gt; <span style="font-style:italic;">'newfile.txt'</span>, <span style="font-style:italic;">:oid</span> =&gt; blob_id) <i data-value="2" class="conum">②</i>
+
+sig = {
+    <span style="font-style:italic;">:email</span> =&gt; <span style="font-style:italic;">&quot;bob@example.com&quot;</span>,
+    <span style="font-style:italic;">:name</span> =&gt; <span style="font-style:italic;">&quot;Bob User&quot;</span>,
+    <span style="font-style:italic;">:time</span> =&gt; Time.now,
+}
+
+commit_id = Rugged::Commit.create(repo,
+    <span style="font-style:italic;">:tree</span> =&gt; index.write_tree(repo), <i data-value="3" class="conum">③</i>
+    <span style="font-style:italic;">:author</span> =&gt; sig,
+    <span style="font-style:italic;">:committer</span> =&gt; sig, <i data-value="4" class="conum">④</i>
+    <span style="font-style:italic;">:message</span> =&gt; <span style="font-style:italic;">&quot;Add newfile.txt&quot;</span>, <i data-value="5" class="conum">⑤</i>
+    <span style="font-style:italic;">:parents</span> =&gt; repo.empty? ? [] : [ repo.head.target ].compact, <i data-value="6" class="conum">⑥</i>
+    <span style="font-style:italic;">:update_ref</span> =&gt; <span style="font-style:italic;">'HEAD'</span>, <i data-value="7" class="conum">⑦</i>
+)
+commit = repo.lookup(commit_id) <i data-value="8" class="conum">⑧</i></code></pre> <div class="callout-list"><ol><li><i data-value="1" class="conum">①</i> 创建一个新的 blob ，它包含了一个新文件的内容。</li> <li><i data-value="2" class="conum">②</i> 将 HEAD 提交树填入索引，并在路径 <code class="literal">newfile.txt</code> 增加新文件。</li> <li><i data-value="3" class="conum">③</i> 这就在 ODB 中创建了一个新的树，并在一个新的提交中使用它。</li> <li><i data-value="4" class="conum">④</i> 我们在 author 栏和 committer 栏使用相同的签名。</li> <li><i data-value="5" class="conum">⑤</i> 提交的信息。</li> <li><i data-value="6" class="conum">⑥</i> 当创建一个提交时，你必须指定这个新提交的父提交。
+这里使用了 HEAD 的末尾作为单一的父提交。</li> <li><i data-value="7" class="conum">⑦</i> 在做一个提交的过程中， Rugged （和 Libgit2 ）能在需要时更新引用。</li> <li><i data-value="8" class="conum">⑧</i> 返回值是一个新提交对象的 SHA-1 哈希，你可以用它来获得一个 <code class="literal">Commit</code> 对象。</li></ol></div> <p>Ruby 的代码很好很简洁，另一方面因为 Libgit2 做了大量工作，所以代码运行起来其实速度也不赖。
+如果你不是一个 Ruby 程序员，我们在 <a id="xref-_libgit2_bindings" href="#_libgit2_bindings" class="xref">其它绑定</a> 有提到其它的一些绑定。</p> <h2 id="高级功能"><a href="#高级功能" class="header-anchor">#</a> 高级功能</h2> <p>Libgit2 有几个超过核心 Git 的能力。
+例如它的可定制性：Libgit2 允许你为一些不同类型的操作自定义的“后端”，让你得以使用与原生 Git 不同的方式存储东西。
+Libgit2 允许为自定义后端指定配置、引用的存储以及对象数据库，</p> <p>我们来看一下它究竟是怎么工作的。
+下面的例子借用自 Libgit2 团队提供的后端样本集 （可以在 <a href="https://github.com/libgit2/libgit2-backends" class="link">https://github.com/libgit2/libgit2-backends</a> 上找到）。
+一个对象数据库的自定义后端是这样建立的：</p> <pre class="source language-c"><code>git_odb *odb;
+<span style="font-weight:bold;">int</span> error = git_odb_new(&amp;odb); <i data-value="1" class="conum">①</i>
+
+git_odb_backend *my_backend;
+error = git_odb_backend_mine(&amp;my_backend, <span style="font-style:italic;">/*…*/</span>); <i data-value="2" class="conum">②</i>
+
+error = git_odb_add_backend(odb, my_backend, 1); <i data-value="3" class="conum">③</i>
+
+git_repository *repo;
+error = git_repository_open(&amp;repo, <span style="font-style:italic;">&quot;some-path&quot;</span>);
+error = git_repository_set_odb(repo, odb); <i data-value="4" class="conum">④</i></code></pre> <p><em>（注意：这个错误被捕获了，但是没有被处理。我们希望你的代码比我们的更好。）</em></p> <div class="callout-list"><ol><li><i data-value="1" class="conum">①</i> 初始化一个空的对象数据库（ ODB ）“前端”，它将被作为一个用来做真正的工作的“后端”的容器。</li> <li><i data-value="2" class="conum">②</i> 初始化一个自定义 ODB 后端。</li> <li><i data-value="3" class="conum">③</i> 为这个前端增加一个后端。</li> <li><i data-value="4" class="conum">④</i> 打开一个版本库，并让它使用我们的 ODB 来寻找对象。</li></ol></div> <p>但是 <code class="literal">git_odb_backend_mine</code> 是个什么东西呢？
+嗯，那是一个你自己的 ODB 实现的构造器，并且你能在那里做任何你想做的事，前提是你能正确地填写 <code class="literal">git_odb_backend</code> 结构。
+它看起来_应该_是这样的：</p> <pre class="source language-c"><code><span style="font-weight:bold;">typedef</span> <span style="font-weight:bold;">struct</span> {
+    git_odb_backend parent;
+
+    <span style="font-style:italic;">// 其它的一些东西</span>
+    <span style="font-weight:bold;">void</span> *custom_context;
+} my_backend_struct;
+
+<span style="font-weight:bold;">int</span> git_odb_backend_mine(git_odb_backend **backend_out, <span style="font-style:italic;">/*…*/</span>)
+{
+    my_backend_struct *backend;
+
+    backend = calloc(1, <span style="font-weight:bold;">sizeof</span> (my_backend_struct));
+
+    backend-&gt;custom_context = <span style="border:1px solid #FF0000;">…</span>;
+
+    backend-&gt;parent.read = &amp;my_backend__read;
+    backend-&gt;parent.read_prefix = &amp;my_backend__read_prefix;
+    backend-&gt;parent.read_header = &amp;my_backend__read_header;
+    <span style="font-style:italic;">// ……</span>
+
+    *backend_out = (git_odb_backend *) backend;
+
+    <span style="font-weight:bold;">return</span> GIT_SUCCESS;
+}</code></pre> <p><code class="literal">my_backend_struct</code> 的第一个成员必须是一个 <code class="literal">git_odb_backend</code> 结构，这是一个微妙的限制：这样就能确保内存布局是 Libgit2 的代码所期望的样子。
+其余都是随意的，这个结构的大小可以随心所欲。</p> <p>这个初始化函数为该结构分配内存，设置自定义的上下文，然后填写它支持的 <code class="literal">parent</code> 结构的成员。
+阅读 Libgit2 的 <code class="literal">include/git2/sys/odb_backend.h</code> 源码以了解全部调用签名，你特定的使用环境会帮你决定使用哪一种调用签名。</p> <h2 id="其它绑定"><a href="#其它绑定" class="header-anchor">#</a> 其它绑定</h2> <p>Libgit2 有很多种语言的绑定。
+在这篇文章中，我们展现了一个使用了几个更加完整的绑定包的小例子，这些库存在于许多种语言中，包括 C++、Go、Node.js、Erlang 以及 JVM ，它们的成熟度各不相同。
+官方的绑定集合可以通过浏览这个版本库得到：https://github.com/libgit2[] 。
+我们写的代码将返回当前 HEAD 指向的提交的提交信息（就像 <code class="literal">git log -1</code> 那样）。</p> <h3 id="libgit2sharp"><a href="#libgit2sharp" class="header-anchor">#</a> LibGit2Sharp</h3> <p>
+如果你在编写一个 .NET 或者 Mono 应用，那么 LibGit2Sharp (<a href="https://github.com/libgit2/libgit2sharp" class="link">https://github.com/libgit2/libgit2sharp</a>) 就是你所需要的。
+这个绑定是用 C# 写成的，并且已经采取许多措施来用令人感到自然的 CLR API 包装原始的 Libgit2 的调用。
+我们的例子看起来就像这样：</p> <pre class="source language-csharp"><code><span style="font-weight:bold;">new</span> Repository(<span style="font-style:italic;">@&quot;C:\path\to\repo&quot;</span>).Head.Tip.Message;</code></pre> <p>对于 Windows 桌面应用，一个叫做 NuGet 的包会让你快速上手。</p> <h3 id="objective-git"><a href="#objective-git" class="header-anchor">#</a> objective-git</h3> <p>
+如果你的应用运行在一个 Apple 平台上，你很有可能使用 Objective-C 作为实现语言。
+Objective-Git (<a href="https://github.com/libgit2/objective-git" class="link">https://github.com/libgit2/objective-git</a>) 是这个环境下的 Libgit2 绑定。
+一个例子看起来类似这样：</p> <pre class="source language-objc"><code>GTRepository *repo =
+    [[GTRepository alloc] initWithURL:[NSURL fileURLWithPath: <span style="font-style:italic;">@&quot;/path/to/repo&quot;</span>] error:NULL];
+NSString *msg = [[[epo headReferenceWithError:NULL] resolvedTarget] message];</code></pre> <p>Objective-git 与 Swift 完美兼容，所以你把 Objective-C 落在一边的时候不用恐惧。</p> <h3 id="pygit2"><a href="#pygit2" class="header-anchor">#</a> pygit2</h3> <p>
+Python 的 Libgit2 绑定叫做 Pygit2 ，你可以在 <a href="https://www.pygit2.org/" class="link">https://www.pygit2.org/</a> 找到它。
+我们的示例程序：</p> <pre class="source language-python"><code>pygit2.Repository(<span style="font-style:italic;">&quot;/path/to/repo&quot;</span>) <span style="font-style:italic;"># 打开代码仓库</span>
+    .head                          <span style="font-style:italic;"># 获取当前分支</span>
+    .peel(pygit2.Commit)           <span style="font-style:italic;"># 找到对应的提交</span>
+    .message                       <span style="font-style:italic;"># 读取提交信息</span></code></pre> <h2 id="扩展阅读"><a href="#扩展阅读" class="header-anchor">#</a> 扩展阅读</h2> <p>当然，完全阐述 Libgit2 的能力已超出本书范围。
+如果你想了解更多关于 Libgit2 的信息，可以浏览它的 API 文档： <a href="https://libgit2.github.com/libgit2" class="link">https://libgit2.github.com/libgit2</a>, 以及一系列的指南： <a href="https://libgit2.github.com/docs" class="link">https://libgit2.github.com/docs</a>.
+对于其它的绑定，检查附带的 README 和测试文件，那里通常有简易教程，以及指向拓展阅读的链接。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/appendix-B/1.html" class="prev">
+        命令行 Git 方式
+      </a></span> <span class="next"><a href="/appendix-B/3.html">
+        JGit
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/46.9c95c270.js" defer></script>
+  </body>
+</html>

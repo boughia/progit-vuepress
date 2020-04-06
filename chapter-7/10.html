@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用 Git 调试 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/102.415183d7.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable router-link-active open"><span>7. Git 工具</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-7/1.html" class="sidebar-link">选择修订版本</a></li><li><a href="/chapter-7/2.html" class="sidebar-link">交互式暂存</a></li><li><a href="/chapter-7/3.html" class="sidebar-link">贮藏与清理</a></li><li><a href="/chapter-7/4.html" class="sidebar-link">签署工作</a></li><li><a href="/chapter-7/5.html" class="sidebar-link">搜索</a></li><li><a href="/chapter-7/6.html" class="sidebar-link">重写历史</a></li><li><a href="/chapter-7/7.html" class="sidebar-link">重置揭密</a></li><li><a href="/chapter-7/8.html" class="sidebar-link">高级合并</a></li><li><a href="/chapter-7/9.html" class="sidebar-link">Rerere</a></li><li><a href="/chapter-7/10.html" class="active sidebar-link">使用 Git 调试</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-7/10.html#文件标注" class="sidebar-link">文件标注</a></li><li class="sidebar-sub-header"><a href="/chapter-7/10.html#二分查找" class="sidebar-link">二分查找</a></li></ul></li><li><a href="/chapter-7/11.html" class="sidebar-link">子模块</a></li><li><a href="/chapter-7/12.html" class="sidebar-link">打包</a></li><li><a href="/chapter-7/13.html" class="sidebar-link">替换</a></li><li><a href="/chapter-7/14.html" class="sidebar-link">凭证存储</a></li><li><a href="/chapter-7/15.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="使用-git-调试"><a href="#使用-git-调试" class="header-anchor">#</a> 使用 Git 调试</h1> <p>除了主要作为版本控制工具外，Git 也提供了几个命令来辅助你调试你的项目源码中的问题。
+由于 Git 被设计成适用于几乎所有类型的内容，这些工具也相当通用，但它们往往可以在出现问题时帮助你找到 bug 或者原因。</p> <h2 id="文件标注"><a href="#文件标注" class="header-anchor">#</a> 文件标注</h2> <p>如果你在追踪代码中的一个 bug，并且想知道是什么时候以及为何会引入，文件标注通常是最好用的工具。
+它能显示任何文件中每行最后一次修改的提交记录。
+所以，如果你在代码中看到一个有 bug 的方法，你可以使用 <code class="literal">git blame</code> 标注这个文件，查看哪一次提交引入了这行。</p> <p>以下示例用 <code class="literal">git blame</code> 确定了 Linux 内核源码顶层的 <code class="literal">Makefile</code> 中每一行分别来自哪个提交和提交者，
+此外用 <code class="literal">-L</code> 选项还可以将标注的输出限制为该文件中的第 69 行到第 82 行。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git blame -L 69,82 Makefile
+b8b0618cf6fab (Cheng Renquan  2009-05-26 16:03:07 +0800 69) ifeq (&quot;$(origin V)&quot;, &quot;command line&quot;)
+b8b0618cf6fab (Cheng Renquan  2009-05-26 16:03:07 +0800 70)   KBUILD_VERBOSE = $(V)
+^1da177e4c3f4 (Linus Torvalds 2005-04-16 15:20:36 -0700 71) endif
+^1da177e4c3f4 (Linus Torvalds 2005-04-16 15:20:36 -0700 72) ifndef KBUILD_VERBOSE
+^1da177e4c3f4 (Linus Torvalds 2005-04-16 15:20:36 -0700 73)   KBUILD_VERBOSE = 0
+^1da177e4c3f4 (Linus Torvalds 2005-04-16 15:20:36 -0700 74) endif
+^1da177e4c3f4 (Linus Torvalds 2005-04-16 15:20:36 -0700 75)
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 76) ifeq ($(KBUILD_VERBOSE),1)
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 77)   quiet =
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 78)   Q =
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 79) else
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 80)   quiet=quiet_
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 81)   Q = @
+066b7ed955808 (Michal Marek   2014-07-04 14:29:30 +0200 82) endif</code></pre> <p>请注意，第一个字段是最后一次修改该行的提交的部分 SHA-1 值。
+接下来两个字段的值是从提交中提取出来的——作者的名字以及提交的时间——所以你就可以很轻易地知道是谁在什么时候修改了那一行。
+接下来就是行号和文件内容。
+注意一下 <code class="literal">^1da177e4c3f4</code> 这个提交的几行，其中的前缀 <code class="literal">^</code> 指出了该文件自第一次提交后从未修改的那些行。
+这会带来小小的困惑，因为目前你至少已经看到三种 Git 使用 <code class="literal">^</code> 来修饰一个提交的 SHA-1 值的不同含义，但这里确实就是这个意思。</p> <p>另一件比较酷的事情是 Git 不会显式地记录文件的重命名。
+它会记录快照，然后在事后尝试计算出重命名的动作。
+这其中有一个很有意思的特性就是你可以让 Git 找出所有的代码移动。
+如果你在 <code class="literal">git blame</code> 后面加上一个 <code class="literal">-C</code>，Git 会分析你正在标注的文件，
+并且尝试找出文件中从别的地方复制过来的代码片段的原始出处。
+比如，你将 <code class="literal">GITServerHandler.m</code> 这个文件拆分为数个文件，其中一个文件是 <code class="literal">GITPackUpload.m</code>。
+对 <code class="literal">GITPackUpload.m</code> 执行带 <code class="literal">-C</code> 参数的 blame 命令，你就可以看到代码块的原始出处：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git blame -C -L 141,153 GITPackUpload.m
+f344f58d GITServerHandler.m (Scott 2009-01-04 141)
+f344f58d GITServerHandler.m (Scott 2009-01-04 142) - (void) gatherObjectShasFromC
+f344f58d GITServerHandler.m (Scott 2009-01-04 143) {
+70befddd GITServerHandler.m (Scott 2009-03-22 144)         //NSLog(@&quot;GATHER COMMI
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 145)
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 146)         NSString *parentSha;
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 147)         GITCommit *commit = [g
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 148)
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 149)         //NSLog(@&quot;GATHER COMMI
+ad11ac80 GITPackUpload.m    (Scott 2009-03-24 150)
+56ef2caf GITServerHandler.m (Scott 2009-01-05 151)         if(commit) {
+56ef2caf GITServerHandler.m (Scott 2009-01-05 152)                 [refDict setOb
+56ef2caf GITServerHandler.m (Scott 2009-01-05 153)</code></pre> <p>这个功能很有用。
+通常来说，你会认为复制代码过来的那个提交是最原始的提交，因为那是你第一次在这个文件中修改了这几行。
+但 Git 会告诉你，你第一次写这几行代码的那个提交才是原始提交，即使这是在另外一个文件里写的。</p> <h2 id="二分查找"><a href="#二分查找" class="header-anchor">#</a> 二分查找</h2> <p>当你知道问题是在哪里引入的情况下文件标注可以帮助你查找问题。
+如果你不知道哪里出了问题，并且自从上次可以正常运行到现在已经有数十个或者上百个提交，
+这个时候你可以使用 <code class="literal">git bisect</code> 来帮助查找。
+<code class="literal">bisect</code> 命令会对你的提交历史进行二分查找来帮助你尽快找到是哪一个提交引入了问题。</p> <p>假设你刚刚在线上环境部署了你的代码，接着收到一些 bug 反馈，
+但这些 bug 在你之前的开发环境里没有出现过，这让你百思不得其解。
+你重新查看了你的代码，发现这个问题是可以被重现的，但是你不知道哪里出了问题。
+你可以用 <strong>二分法</strong> 来找到这个问题。
+首先执行 <code class="literal">git bisect start</code> 来启动，接着执行 <code class="literal">git bisect bad</code> 来告诉系统当前你所在的提交是有问题的。
+然后你必须使用 <code class="literal">git bisect good &lt;good_commit&gt;</code>，告诉 bisect 已知的最后一次正常状态是哪次提交：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect start
+<span style="font-weight:bold;">$</span> git bisect bad
+<span style="font-weight:bold;">$</span> git bisect good v1.0
+Bisecting: 6 revisions left to test after this
+[ecb6e1bc347ccecc5f9350d878ce677feb13d3b2] error handling on repo</code></pre> <p>Git 发现在你标记为正常的提交（v1.0）和当前的错误版本之间有大约12次提交，于是 Git 检出中间的那个提交。
+现在你可以执行测试，看看在这个提交下问题是不是还是存在。
+如果还存在，说明问题是在这个提交之前引入的；如果问题不存在，说明问题是在这个提交之后引入的。
+假设测试结果是没有问题的，你可以通过 <code class="literal">git bisect good</code> 来告诉 Git，然后继续寻找。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect good
+Bisecting: 3 revisions left to test after this
+[b047b02ea83310a70fd603dc8cd7a6cd13d15c04] secure this thing</code></pre> <p>现在你在另一个提交上了，这个提交是刚刚那个测试通过的提交和有问题的提交的中点。
+你再一次执行测试，发现这个提交下是有问题的，因此你可以通过 <code class="literal">git bisect bad</code> 告诉 Git：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect bad
+Bisecting: 1 revisions left to test after this
+[f71ce38690acf49c1f3c9bea38e09d82a5ce6014] drop exceptions table</code></pre> <p>这个提交是正常的，现在 Git 拥有的信息已经可以确定引入问题的位置在哪里。
+它会告诉你第一个错误提交的 SHA-1 值并显示一些提交说明，以及哪些文件在那次提交里被修改过，这样你可以找出引入 bug 的根源：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect good
+b047b02ea83310a70fd603dc8cd7a6cd13d15c04 is first bad commit
+commit b047b02ea83310a70fd603dc8cd7a6cd13d15c04
+Author: PJ Hyett &lt;pjhyett@example.com&gt;
+Date:   Tue Jan 27 14:48:32 2009 -0800
+
+    secure this thing
+
+:040000 040000 40ee3e7821b895e52c1695092db9bdc4c61d1730
+f24d3c6ebcfc639b1a3814550e62d60b8e68a8e4 M  config</code></pre> <p>当你完成这些操作之后，你应该执行 <code class="literal">git bisect reset</code> 重置你的 HEAD 指针到最开始的位置，
+否则你会停留在一个奇怪的状态：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect reset</code></pre> <p>这是一个可以帮助你在几分钟内从数百个提交中找到 bug 的强大工具。
+事实上，如果你有一个脚本在项目是正常的情况下返回 0，在不正常的情况下返回非 0，你可以使 <code class="literal">git bisect</code> 自动化这些操作。
+首先，你设定好项目正常以及不正常所在提交的二分查找范围。
+你可以通过 <code class="literal">bisect start</code> 命令的参数来设定这两个提交，第一个参数是项目不正常的提交，第二个参数是项目正常的提交：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git bisect start HEAD v1.0
+<span style="font-weight:bold;">$</span> git bisect run test-error.sh</code></pre> <p>Git 会自动在每个被检出的提交里执行 <code class="literal">test-error.sh</code>，直到找到项目第一个不正常的提交。
+你也可以执行 <code class="literal">make</code> 或者 <code class="literal">make tests</code> 或者其他东西来进行自动化测试。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-7/9.html" class="prev">
+        Rerere
+      </a></span> <span class="next"><a href="/chapter-7/11.html">
+        子模块
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/102.415183d7.js" defer></script>
+  </body>
+</html>

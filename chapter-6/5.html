@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>脚本 GitHub | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/12.5d2796d3.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/105.66c87d19.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable router-link-active open"><span>6. GitHub</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-6/1.html" class="sidebar-link">账户的创建和配置</a></li><li><a href="/chapter-6/2.html" class="sidebar-link">对项目做出贡献</a></li><li><a href="/chapter-6/3.html" class="sidebar-link">维护项目</a></li><li><a href="/chapter-6/4.html" class="sidebar-link">管理组织</a></li><li><a href="/chapter-6/5.html" class="active sidebar-link">脚本 GitHub</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-6/5.html#服务与钩子" class="sidebar-link">服务与钩子</a></li><li class="sidebar-sub-header"><a href="/chapter-6/5.html#github-api" class="sidebar-link">GitHub API</a></li><li class="sidebar-sub-header"><a href="/chapter-6/5.html#基本用途" class="sidebar-link">基本用途</a></li><li class="sidebar-sub-header"><a href="/chapter-6/5.html#在一个问题上评论" class="sidebar-link">在一个问题上评论</a></li><li class="sidebar-sub-header"><a href="/chapter-6/5.html#修改-pull-request-的状态" class="sidebar-link">修改 Pull Request 的状态</a></li><li class="sidebar-sub-header"><a href="/chapter-6/5.html#octokit" class="sidebar-link">Octokit</a></li></ul></li><li><a href="/chapter-6/6.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable"><span>7. Git 工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="脚本-github"><a href="#脚本-github" class="header-anchor">#</a> 脚本 GitHub</h1> <p>所以现在我们已经介绍了 GitHub 的大部分功能与工作流程，但是任意一个小组或项目都会去自定义，因为他们想要创造或扩展想要整合的服务。</p> <p>对我们来说很幸运的是，GitHub 在许多方面都真的很方便 Hack。
+在本节中我们将会介绍如何使用 GitHub 钩子系统与 API 接口，使 GitHub 按照我们的设想来工作。</p> <h2 id="服务与钩子"><a href="#服务与钩子" class="header-anchor">#</a> 服务与钩子</h2> <p>GitHub 仓库管理中的钩子与服务区块是 GitHub 与外部系统交互最简单的方式。</p> <h3 id="服务"><a href="#服务" class="header-anchor">#</a> 服务</h3> <p>首先我们来看一下服务。
+钩子与服务整合都可以在仓库的设置区块中找到，就在我们之前添加协作者与改变项目的默认分支的地方。
+在 “Webhooks and Services” 标签下你会看到与 <a id="xref-_services_hooks" href="#_services_hooks" class="xref">服务与钩子配置区域</a> 类似的内容。</p> <figure id="_services_hooks" class="image"><div class="content"><img src="/assets/img/scripting-01-services.e876d05c.png" alt="服务与钩子"></div> <figcaption>Figure 49. 服务与钩子配置区域</figcaption></figure> <p>有许多可以选择的服务，大多数是整合到其他的商业与开源系统中。
+它们中的大多数是为了整合持续集成服务、BUG 与问题追踪系统、聊天室系统与文档系统。
+我们将会通过设置一个非常简单的例子来介绍。
+如果从 “Add Service” 选择 “email”，会得到一个类似 <a id="xref-_service_config" href="#_service_config" class="xref">电子邮件服务配置</a> 的配置屏幕。</p> <figure id="_service_config" class="image"><div class="content"><img src="/assets/img/scripting-02-email-service.5df71047.png" alt="电子邮件服务"></div> <figcaption>Figure 50. 电子邮件服务配置</figcaption></figure> <p>在本例中，如果我们点击 “Add service” 按钮，每次有人推送内容到仓库时，指定的电子邮件地址都会收到一封邮件。
+服务可以监听许多不同类型的事件，但是大多数只监听推送事件然后使用那些数据做一些事情。</p> <p>如果有一个正在使用的系统想要整合到 GitHub，应当先检查这里看有没有已有的可用的服务整合。
+例如，如果正使用 Jenkins 来测试你的代码库，当每次有人推送到你的仓库时你可以启用 Jenkins 内置的整合启动测试运行。</p> <h3 id="钩子"><a href="#钩子" class="header-anchor">#</a> 钩子</h3> <p>如果需要做一些更具体的事，或者想要整合一个不在这个列表中的服务或站点，可以转而使用更通用的钩子系统。
+GitHub 仓库钩子是非常简单的。
+指定一个 URL 然后 GitHub 在任一期望的事件发生时就会发送一个 HTTP 请求到那个 URL 。</p> <p>通常做这件事的方式是可以设置一个小的 web 服务来监听 GitHub 钩子请求然后使用收到的数据做一些事情。</p> <p>为了启用一个钩子，点击 <a href="#_services_hooks" class="xref">服务与钩子配置区域</a> 中的 “Add webhook” 按钮。
+这会将你引导至一个类似 <a id="xref-_web_hook" href="#_web_hook" class="xref">Web 钩子配置</a> 的页面。</p> <figure id="_web_hook" class="image"><div class="content"><img src="/assets/img/scripting-03-webhook.bdc6cb62.png" alt="Web 钩子配置"></div> <figcaption>Figure 51. Web 钩子配置</figcaption></figure> <p>Web 钩子的设置非常简单。
+大多数情况下只需要输入一个 URL 与一个密钥然后点击 “Add webhook”。
+有几个选项可以指定在哪个事件时想要 GitHub 发送请求——
+默认的行为是只有当某人推送新代码到仓库的任一分支时的 <code class="literal">push</code> 事件获得一个请求。</p> <p>让我们看一个设置处理 web 钩子的 web 服务的小例子。
+我们将会使用 Ruby web 框架 Sinatra，因为它相当简洁，应该能够轻松地看到我们正在做什么。</p> <p>假设我们想要在某个特定的人推送到我们的项目的特定分支并修改一个特定文件时得到一封邮件。
+我们可以相当容易地使用类似下面的代码做到：</p> <pre class="source language-ruby"><code>require <span style="font-style:italic;">'sinatra'</span>
+require <span style="font-style:italic;">'json'</span>
+require <span style="font-style:italic;">'mail'</span>
+
+post <span style="font-style:italic;">'/payload'</span> <span style="font-weight:bold;">do</span>
+  push = JSON.parse(request.body.read) <span style="font-style:italic;"># parse the JSON</span>
+
+  <span style="font-style:italic;"># gather the data we're looking for</span>
+  pusher = push[<span style="font-style:italic;">&quot;pusher&quot;</span>][<span style="font-style:italic;">&quot;name&quot;</span>]
+  branch = push[<span style="font-style:italic;">&quot;ref&quot;</span>]
+
+  <span style="font-style:italic;"># get a list of all the files touched</span>
+  files = push[<span style="font-style:italic;">&quot;commits&quot;</span>].map <span style="font-weight:bold;">do</span> |commit|
+    commit[<span style="font-style:italic;">'added'</span>] + commit[<span style="font-style:italic;">'modified'</span>] + commit[<span style="font-style:italic;">'removed'</span>]
+  <span style="font-weight:bold;">end</span>
+  files = files.flatten.uniq
+
+  <span style="font-style:italic;"># check for our criteria</span>
+  <span style="font-weight:bold;">if</span> pusher == <span style="font-style:italic;">'schacon'</span> &amp;&amp;
+     branch == <span style="font-style:italic;">'ref/heads/special-branch'</span> &amp;&amp;
+     files.include?(<span style="font-style:italic;">'special-file.txt'</span>)
+
+    Mail.deliver <span style="font-weight:bold;">do</span>
+      from     <span style="font-style:italic;">'tchacon@example.com'</span>
+      to       <span style="font-style:italic;">'tchacon@example.com'</span>
+      subject  <span style="font-style:italic;">'Scott Changed the File'</span>
+      body     <span style="font-style:italic;">&quot;ALARM&quot;</span>
+    <span style="font-weight:bold;">end</span>
+  <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>这里我们拿到一个 GitHub 传送给我们的 JSON 请求然后查找推送者，他们推送到了什么分支以及推送的所有提交都改动了哪些文件。
+然后我们检查它是否与我们的条件区配，如果匹配则发送一封邮件。</p> <p>为了开发与测试类似这样的东西，在设置钩子的地方有一个漂亮的开发者控制台。
+可以看到 GitHub 为那个 webhook 的最后几次请求。
+对每一个钩子，当它发送后都可以深入挖掘，检测它是否是成功的与请求及回应的消息头与消息体。
+这使得测试与调试钩子非常容易。</p> <figure id="_web_hook_debug" class="image"><div class="content"><img src="/assets/img/scripting-04-webhook-debug.3ae8ae48.png" alt="Web 钩子调试信息"></div> <figcaption>Figure 52. Web 钩子调试信息</figcaption></figure> <p>开发者控制台的另一个很棒的功能是可以轻松地重新发送任何请求来测试你的服务。</p> <p>关于如何编写 web 钩子与所有可监听的不同事件类型的更多信息，请访问在
+<a href="https://developer.github.com/webhooks/" class="link">https://developer.github.com/webhooks/</a> 的 GitHub 开发者文档。</p> <h2 id="github-api"><a href="#github-api" class="header-anchor">#</a> GitHub API</h2> <p>
+服务与钩子给你提供了一种方式来接收关于在仓库中发生的事件的推送通知，但是如何获取相关事件的详情呢？
+如何自动化一些诸如添加协作者或给问题加标签的事情呢？</p> <p>这是 GitHub API 派上用场的地方。
+在自动化流行的趋势下，GitHub 提供了大量的 API 接口，可以进行几乎任何能在网站上进行的操作。
+在本节中我们将会学习如何授权与连接到 API，如何通过 API 在一个问题上评论与如何修改一个 Pull Request 的状态。</p> <h2 id="基本用途"><a href="#基本用途" class="header-anchor">#</a> 基本用途</h2> <p>可以做的最基本的事情是向一个不需要授权的接口上发送一个简单的 GET 请求。
+该接口可能是一个用户或开源项目的只读信息。
+例如，如果我们想要知道更多关于名为 “schacon” 的用户信息，我们可以运行类似下面的东西：</p> <pre class="source language-javascript"><code>$ curl https:<span style="font-style:italic;">//api.github.com/users/schacon</span>
+{
+  <span style="font-style:italic;">&quot;login&quot;</span>: <span style="font-style:italic;">&quot;schacon&quot;</span>,
+  <span style="font-style:italic;">&quot;id&quot;</span>: 70,
+  <span style="font-style:italic;">&quot;avatar_url&quot;</span>: <span style="font-style:italic;">&quot;https://avatars.githubusercontent.com/u/70&quot;</span>,
+<span style="border:1px solid #FF0000;">#</span> <span style="border:1px solid #FF0000;">…</span>
+  <span style="font-style:italic;">&quot;name&quot;</span>: <span style="font-style:italic;">&quot;Scott Chacon&quot;</span>,
+  <span style="font-style:italic;">&quot;company&quot;</span>: <span style="font-style:italic;">&quot;GitHub&quot;</span>,
+  <span style="font-style:italic;">&quot;following&quot;</span>: 19,
+  <span style="font-style:italic;">&quot;created_at&quot;</span>: <span style="font-style:italic;">&quot;2008-01-27T17:19:28Z&quot;</span>,
+  <span style="font-style:italic;">&quot;updated_at&quot;</span>: <span style="font-style:italic;">&quot;2014-06-10T02:37:23Z&quot;</span>
+}</code></pre> <p>有大量类似这样的接口来获得关于组织、项目、问题、提交的信息 — 差不多就是你能在 GitHub 上看到的所有东西。
+甚至可以使用 API 来渲染任意 Markdown 或寻找一个 <code class="literal">.gitignore</code> 模板。</p> <pre class="source language-javascript"><code>$ curl https:<span style="font-style:italic;">//api.github.com/gitignore/templates/Java</span>
+{
+  <span style="font-style:italic;">&quot;name&quot;</span>: <span style="font-style:italic;">&quot;Java&quot;</span>,
+  <span style="font-style:italic;">&quot;source&quot;</span>: <span style="font-style:italic;">&quot;*.class</span>
+
+<span style="font-style:italic;"># Mobile Tools for Java (J2ME)</span>
+<span style="font-style:italic;">.mtj.tmp/</span>
+
+<span style="font-style:italic;"># Package Files #</span>
+<span style="font-style:italic;">*.jar</span>
+<span style="font-style:italic;">*.war</span>
+<span style="font-style:italic;">*.ear</span>
+
+<span style="font-style:italic;"># virtual machine crash logs, see https://www.java.com/en/download/help/error_hotspot.xml</span>
+<span style="font-style:italic;">hs_err_pid*</span>
+<span style="font-style:italic;">&quot;</span>
+}</code></pre> <h2 id="在一个问题上评论"><a href="#在一个问题上评论" class="header-anchor">#</a> 在一个问题上评论</h2> <p>然而，如果想要在网站上进行一个操作，如在 Issue 或 Pull Request 上评论，或者想要查看私有内容或与其交互，你需要授权。</p> <p>这里提供了几种授权方式。
+你可以使用仅需用户名与密码的基本授权，但是通常更好的主意是使用一个个人访问令牌。
+可以从设置页的 “Applications” 标签生成访问令牌。</p> <figure id="_access_token" class="image"><div class="content"><img src="/assets/img/scripting-05-access-token.b45bc298.png" alt="访问令牌"></div> <figcaption>Figure 53. 从设置页的 “Applications” 标签生成访问令牌。</figcaption></figure> <p>它会询问这个令牌的作用域与一个描述。
+确保使用一个好的描述信息，这样当脚本或应用不再使用时你会很放心地移除。</p> <p>GitHub 只会显示令牌一次，所以记得一定要拷贝它。
+现在可以在脚本中使用它代替使用用户名写密码来授权。
+这很漂亮，因为可以限制想要做的范围并且令牌是可废除的。</p> <p>这也会有一个提高频率上限的附加优点。
+如果没有授权的话，你会被限制在一小时最多发起 60 次请求。
+如果授权则可以一小时最多发起 5000 次请求。</p> <p>所以让我们利用它来对我们的其中一个问题进行评论。
+想要对一个特定问题 Issue #6 留下一条评论。
+必须使用刚刚生成的令牌作为 Authorization 头信息，发送一个到 <code class="literal">repos/&lt;user&gt;/&lt;repo&gt;/issues/&lt;num&gt;/comments</code> 的 HTTP POST 请求。</p> <pre class="source language-javascript"><code>$ curl -H <span style="font-style:italic;">&quot;Content-Type: application/json&quot;</span> \
+       -H <span style="font-style:italic;">&quot;Authorization: token TOKEN&quot;</span> \
+       --data <span style="font-style:italic;">'{&quot;body&quot;:&quot;A new comment, :+1:&quot;}'</span> \
+       https:<span style="font-style:italic;">//api.github.com/repos/schacon/blink/issues/6/comments</span>
+{
+  <span style="font-style:italic;">&quot;id&quot;</span>: 58322100,
+  <span style="font-style:italic;">&quot;html_url&quot;</span>: <span style="font-style:italic;">&quot;https://github.com/schacon/blink/issues/6#issuecomment-58322100&quot;</span>,
+  ...
+  <span style="font-style:italic;">&quot;user&quot;</span>: {
+    <span style="font-style:italic;">&quot;login&quot;</span>: <span style="font-style:italic;">&quot;tonychacon&quot;</span>,
+    <span style="font-style:italic;">&quot;id&quot;</span>: 7874698,
+    <span style="font-style:italic;">&quot;avatar_url&quot;</span>: <span style="font-style:italic;">&quot;https://avatars.githubusercontent.com/u/7874698?v=2&quot;</span>,
+    <span style="font-style:italic;">&quot;type&quot;</span>: <span style="font-style:italic;">&quot;User&quot;</span>,
+  },
+  <span style="font-style:italic;">&quot;created_at&quot;</span>: <span style="font-style:italic;">&quot;2014-10-08T07:48:19Z&quot;</span>,
+  <span style="font-style:italic;">&quot;updated_at&quot;</span>: <span style="font-style:italic;">&quot;2014-10-08T07:48:19Z&quot;</span>,
+  <span style="font-style:italic;">&quot;body&quot;</span>: <span style="font-style:italic;">&quot;A new comment, :+1:&quot;</span>
+}</code></pre> <p>现在如果进入到那个问题，可以看到我们刚刚发布的评论，像 <a id="xref-_api_comment" href="#_api_comment" class="xref">从 GitHub API 发布的一条评论</a> 一样。</p> <figure id="_api_comment" class="image"><div class="content"><img src="data:image/png;base64,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" alt="API 评论"></div> <figcaption>Figure 54. 从 GitHub API 发布的一条评论</figcaption></figure> <p>可以使用 API 去做任何可以在网站上做的事情 — 创建与设置里程碑、指派人员到 Issues 与 Pull Requests，创建与修改标签、访问提交数据、创建新的提交与分支、打开关闭或合并 Pull Requests、创建与编辑团队、在 Pull Request 中评论某行代码、搜索网站等等。</p> <h2 id="修改-pull-request-的状态"><a href="#修改-pull-request-的状态" class="header-anchor">#</a> 修改 Pull Request 的状态</h2> <p>我们要看最后一个例子在使用拉取请求时非常有用。
+每一个提交可以有一个或多个与它关联的状态，有 API 来添加与查询状态。</p> <p>大多数持续集成与测试服务通过测试推送的代码后使用这个 API 来回应，然后报告提交是否通过了全部测试。
+你也可以使用该接口来检查提交信息是否经过合适的格式化、提交者是否遵循了所有你的贡献准则、提交是否经过有效的签名 — 种种这类事情。</p> <p>假设在仓库中设置了一个 web 钩子访问一个用来检查提交信息中的 <code class="literal">Signed-off-by</code> 字符串的小的 web 服务。</p> <pre class="source language-ruby"><code>require <span style="font-style:italic;">'httparty'</span>
+require <span style="font-style:italic;">'sinatra'</span>
+require <span style="font-style:italic;">'json'</span>
+
+post <span style="font-style:italic;">'/payload'</span> <span style="font-weight:bold;">do</span>
+  push = JSON.parse(request.body.read) <span style="font-style:italic;"># parse the JSON</span>
+  repo_name = push[<span style="font-style:italic;">'repository'</span>][<span style="font-style:italic;">'full_name'</span>]
+
+  <span style="font-style:italic;"># look through each commit message</span>
+  push[<span style="font-style:italic;">&quot;commits&quot;</span>].each <span style="font-weight:bold;">do</span> |commit|
+
+    <span style="font-style:italic;"># look for a Signed-off-by string</span>
+    <span style="font-weight:bold;">if</span> <span style="font-style:italic;">/Signed-off-by/</span>.match commit[<span style="font-style:italic;">'message'</span>]
+      state = <span style="font-style:italic;">'success'</span>
+      description = <span style="font-style:italic;">'Successfully signed off!'</span>
+    <span style="font-weight:bold;">else</span>
+      state = <span style="font-style:italic;">'failure'</span>
+      description = <span style="font-style:italic;">'No signoff found.'</span>
+    <span style="font-weight:bold;">end</span>
+
+    <span style="font-style:italic;"># post status to GitHub</span>
+    sha = commit[<span style="font-style:italic;">&quot;id&quot;</span>]
+    status_url = <span style="font-style:italic;">&quot;https://api.github.com/repos/</span><span style="font-weight:bold;font-style:italic;">#{</span>repo_name<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">/statuses/</span><span style="font-weight:bold;font-style:italic;">#{</span>sha<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+
+    status = {
+      <span style="font-style:italic;">&quot;state&quot;</span>       =&gt; state,
+      <span style="font-style:italic;">&quot;description&quot;</span> =&gt; description,
+      <span style="font-style:italic;">&quot;target_url&quot;</span>  =&gt; <span style="font-style:italic;">&quot;http://example.com/how-to-signoff&quot;</span>,
+      <span style="font-style:italic;">&quot;context&quot;</span>     =&gt; <span style="font-style:italic;">&quot;validate/signoff&quot;</span>
+    }
+    HTTParty.post(status_url,
+      <span style="font-style:italic;">:body</span> =&gt; status.to_json,
+      <span style="font-style:italic;">:headers</span> =&gt; {
+        <span style="font-style:italic;">'Content-Type'</span>  =&gt; <span style="font-style:italic;">'application/json'</span>,
+        <span style="font-style:italic;">'User-Agent'</span>    =&gt; <span style="font-style:italic;">'tonychacon/signoff'</span>,
+        <span style="font-style:italic;">'Authorization'</span> =&gt; <span style="font-style:italic;">&quot;token </span><span style="font-weight:bold;font-style:italic;">#{</span>ENV[<span style="font-style:italic;">'TOKEN'</span>]<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span> }
+    )
+  <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <p>希望这相当容易做。
+在这个 web 钩子处理器中我们浏览刚刚推送上来的每一个提交，在提交信息中查找字符串
+<em>Signed-off-by</em> 并且最终使用 HTTP 向 <code class="literal">/repos/&lt;user&gt;/&lt;repo&gt;/statuses/&lt;commit_sha&gt;</code>
+API 接口发送一个带有状态的 POST 请求。</p> <p>在本例中可以发送一个状态（<em>success</em>, <em>failure</em>, <em>error</em>）、一个发生了什么的描述信息、
+一个用户可以了解更多信息的目标 URL 与一个 “context” 以防一个单独的提交有多个状态。
+例如，一个测试服务可以提供一个状态与一个类似这样的验证服务也可能提供一个状态 — “context” 字段是用来区别它们的。</p> <p>如果某人在 GitHub 中打开了一个新的拉取请求并且这个钩子已经设置，会看到类似 <a id="xref-_commit_status" href="#_commit_status" class="xref">通过 API 的提交状态</a> 的信息。</p> <figure id="_commit_status" class="image"><div class="content"><img src="/assets/img/scripting-07-status.962b40b7.png" alt="提交状态"></div> <figcaption>Figure 55. 通过 API 的提交状态</figcaption></figure> <p>现在可以看到一个小的绿色对勾标记在提交信息中有 “Signed-off-by” 的提交旁边，红色的对勾标记在作者忘记签名的提交旁边。
+也可以看到 Pull Request 显示在那个分支上的最后提交的状态，如果失败的话会警告你。
+如果对测试结果使用这个 API 那么就不会不小心合并某些未通过测试的最新提交。</p> <h2 id="octokit"><a href="#octokit" class="header-anchor">#</a> Octokit</h2> <p>尽管我们在这些例子中都是通过 <code class="literal">curl</code> 与基本的 HTTP 请求来做几乎所有的事情，还有一些以更自然的方式利用 API 的开源库存在着。
+在写这篇文章的时候，被支持的语言包括 Go、Objective-C、Ruby 与 .NET。
+访问 <a href="https://github.com/octokit" class="link">https://github.com/octokit</a> 了解更多相关信息，它们帮你处理了更多 HTTP 相关的内容。</p> <p>希望这些工具能帮助你自定义与修改 GitHub 来更好地为特定的工作流程工作。
+关于全部 API 的完整文档与常见任务的指南，请查阅 <a href="https://developer.github.com" class="link">https://developer.github.com</a>。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-6/4.html" class="prev">
+        管理组织
+      </a></span> <span class="next"><a href="/chapter-6/6.html">
+        总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/12.5d2796d3.js" defer></script>
+  </body>
+</html>

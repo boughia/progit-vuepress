@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>凭证存储 | Pro Git</title>
+    <meta name="description" content="Pro Git 第二版中文版">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.130772cc.css" as="style"><link rel="preload" href="/assets/js/app.e343c26e.js" as="script"><link rel="preload" href="/assets/js/2.c0327591.js" as="script"><link rel="preload" href="/assets/js/105.66c87d19.js" as="script"><link rel="prefetch" href="/assets/js/10.0f9cab2e.js"><link rel="prefetch" href="/assets/js/100.83085317.js"><link rel="prefetch" href="/assets/js/101.56c6cce3.js"><link rel="prefetch" href="/assets/js/102.415183d7.js"><link rel="prefetch" href="/assets/js/103.65e1f37c.js"><link rel="prefetch" href="/assets/js/104.4844f2f3.js"><link rel="prefetch" href="/assets/js/106.05b2e48e.js"><link rel="prefetch" href="/assets/js/107.929c5d0f.js"><link rel="prefetch" href="/assets/js/108.7b376e69.js"><link rel="prefetch" href="/assets/js/109.1a730133.js"><link rel="prefetch" href="/assets/js/11.a6d7b909.js"><link rel="prefetch" href="/assets/js/110.191355ad.js"><link rel="prefetch" href="/assets/js/111.a049971f.js"><link rel="prefetch" href="/assets/js/112.482ffc61.js"><link rel="prefetch" href="/assets/js/113.d94b639c.js"><link rel="prefetch" href="/assets/js/114.8b9356fb.js"><link rel="prefetch" href="/assets/js/115.ebf1e18a.js"><link rel="prefetch" href="/assets/js/116.18b899b1.js"><link rel="prefetch" href="/assets/js/117.42a1b8c4.js"><link rel="prefetch" href="/assets/js/118.3a9d2ee3.js"><link rel="prefetch" href="/assets/js/119.4020833f.js"><link rel="prefetch" href="/assets/js/12.5d2796d3.js"><link rel="prefetch" href="/assets/js/120.9fae7990.js"><link rel="prefetch" href="/assets/js/121.cb3ef973.js"><link rel="prefetch" href="/assets/js/13.f69c9e48.js"><link rel="prefetch" href="/assets/js/14.6debe4be.js"><link rel="prefetch" href="/assets/js/15.a7c94022.js"><link rel="prefetch" href="/assets/js/16.6609021c.js"><link rel="prefetch" href="/assets/js/17.34ba32b5.js"><link rel="prefetch" href="/assets/js/18.4dd74348.js"><link rel="prefetch" href="/assets/js/19.2f410429.js"><link rel="prefetch" href="/assets/js/20.16ec0bd3.js"><link rel="prefetch" href="/assets/js/21.ad1ca29b.js"><link rel="prefetch" href="/assets/js/22.293aa5c6.js"><link rel="prefetch" href="/assets/js/23.025d3c7a.js"><link rel="prefetch" href="/assets/js/24.770fb3e1.js"><link rel="prefetch" href="/assets/js/25.6ce5a0ac.js"><link rel="prefetch" href="/assets/js/26.6404265b.js"><link rel="prefetch" href="/assets/js/27.62decef4.js"><link rel="prefetch" href="/assets/js/28.d1136794.js"><link rel="prefetch" href="/assets/js/29.95a71153.js"><link rel="prefetch" href="/assets/js/3.c6496835.js"><link rel="prefetch" href="/assets/js/30.eae133de.js"><link rel="prefetch" href="/assets/js/31.a6e572c3.js"><link rel="prefetch" href="/assets/js/32.4fc54ce1.js"><link rel="prefetch" href="/assets/js/33.d1c0ecba.js"><link rel="prefetch" href="/assets/js/34.29586ee8.js"><link rel="prefetch" href="/assets/js/35.8e480916.js"><link rel="prefetch" href="/assets/js/36.5b537183.js"><link rel="prefetch" href="/assets/js/37.40c06fd9.js"><link rel="prefetch" href="/assets/js/38.555815d4.js"><link rel="prefetch" href="/assets/js/39.6d5293e5.js"><link rel="prefetch" href="/assets/js/4.e8424aa9.js"><link rel="prefetch" href="/assets/js/40.78797741.js"><link rel="prefetch" href="/assets/js/41.ac76af08.js"><link rel="prefetch" href="/assets/js/42.e7d51b5d.js"><link rel="prefetch" href="/assets/js/43.b20d0fd6.js"><link rel="prefetch" href="/assets/js/44.e29a7c46.js"><link rel="prefetch" href="/assets/js/45.cdea70ee.js"><link rel="prefetch" href="/assets/js/46.9c95c270.js"><link rel="prefetch" href="/assets/js/47.ba588e60.js"><link rel="prefetch" href="/assets/js/48.a8b188ed.js"><link rel="prefetch" href="/assets/js/49.5c609647.js"><link rel="prefetch" href="/assets/js/5.b1d6f09c.js"><link rel="prefetch" href="/assets/js/50.662cc18e.js"><link rel="prefetch" href="/assets/js/51.5ff994dd.js"><link rel="prefetch" href="/assets/js/52.b1b6dd6c.js"><link rel="prefetch" href="/assets/js/53.bd783506.js"><link rel="prefetch" href="/assets/js/54.a05ff5b6.js"><link rel="prefetch" href="/assets/js/55.c30a6cad.js"><link rel="prefetch" href="/assets/js/56.44021f37.js"><link rel="prefetch" href="/assets/js/57.90e56f36.js"><link rel="prefetch" href="/assets/js/58.9ec15505.js"><link rel="prefetch" href="/assets/js/59.8f4ffc72.js"><link rel="prefetch" href="/assets/js/6.49fca771.js"><link rel="prefetch" href="/assets/js/60.8064b38b.js"><link rel="prefetch" href="/assets/js/61.d570ac20.js"><link rel="prefetch" href="/assets/js/62.c66ac933.js"><link rel="prefetch" href="/assets/js/63.d01f285e.js"><link rel="prefetch" href="/assets/js/64.a04e3c07.js"><link rel="prefetch" href="/assets/js/65.af0f13b3.js"><link rel="prefetch" href="/assets/js/66.f81074cc.js"><link rel="prefetch" href="/assets/js/67.47db8798.js"><link rel="prefetch" href="/assets/js/68.50332586.js"><link rel="prefetch" href="/assets/js/69.059056ac.js"><link rel="prefetch" href="/assets/js/7.225eae41.js"><link rel="prefetch" href="/assets/js/70.c46fd0e9.js"><link rel="prefetch" href="/assets/js/71.d45f53f9.js"><link rel="prefetch" href="/assets/js/72.eef7975a.js"><link rel="prefetch" href="/assets/js/73.d947c914.js"><link rel="prefetch" href="/assets/js/74.cc528edb.js"><link rel="prefetch" href="/assets/js/75.7e89a25f.js"><link rel="prefetch" href="/assets/js/76.68b7cb39.js"><link rel="prefetch" href="/assets/js/77.f51671b0.js"><link rel="prefetch" href="/assets/js/78.d940a766.js"><link rel="prefetch" href="/assets/js/79.657d22ce.js"><link rel="prefetch" href="/assets/js/8.1c488769.js"><link rel="prefetch" href="/assets/js/80.b7eef56c.js"><link rel="prefetch" href="/assets/js/81.5a9ab73c.js"><link rel="prefetch" href="/assets/js/82.82f8101f.js"><link rel="prefetch" href="/assets/js/83.16c731ea.js"><link rel="prefetch" href="/assets/js/84.ebb4499e.js"><link rel="prefetch" href="/assets/js/85.323932c6.js"><link rel="prefetch" href="/assets/js/86.5fe42af0.js"><link rel="prefetch" href="/assets/js/87.1e607b95.js"><link rel="prefetch" href="/assets/js/88.1cb1bb53.js"><link rel="prefetch" href="/assets/js/89.30b0fda7.js"><link rel="prefetch" href="/assets/js/9.c748d72e.js"><link rel="prefetch" href="/assets/js/90.050be28f.js"><link rel="prefetch" href="/assets/js/91.57dee3b4.js"><link rel="prefetch" href="/assets/js/92.5ec93ebb.js"><link rel="prefetch" href="/assets/js/93.5a3e28cc.js"><link rel="prefetch" href="/assets/js/94.ab209645.js"><link rel="prefetch" href="/assets/js/95.2a4ea0e2.js"><link rel="prefetch" href="/assets/js/96.41db9364.js"><link rel="prefetch" href="/assets/js/97.b936622c.js"><link rel="prefetch" href="/assets/js/98.32537222.js"><link rel="prefetch" href="/assets/js/99.64a3e64d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.130772cc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Pro Git</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">引言</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-1/" class="sidebar-heading clickable"><span>1. 起步</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-2/" class="sidebar-heading clickable"><span>2. Git 基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-3/" class="sidebar-heading clickable"><span>3. Git 分支</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-4/" class="sidebar-heading clickable"><span>4. 服务器上的 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-5/" class="sidebar-heading clickable"><span>5. 分布式 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-6/" class="sidebar-heading clickable"><span>6. GitHub</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-7/" class="sidebar-heading clickable router-link-active open"><span>7. Git 工具</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/chapter-7/1.html" class="sidebar-link">选择修订版本</a></li><li><a href="/chapter-7/2.html" class="sidebar-link">交互式暂存</a></li><li><a href="/chapter-7/3.html" class="sidebar-link">贮藏与清理</a></li><li><a href="/chapter-7/4.html" class="sidebar-link">签署工作</a></li><li><a href="/chapter-7/5.html" class="sidebar-link">搜索</a></li><li><a href="/chapter-7/6.html" class="sidebar-link">重写历史</a></li><li><a href="/chapter-7/7.html" class="sidebar-link">重置揭密</a></li><li><a href="/chapter-7/8.html" class="sidebar-link">高级合并</a></li><li><a href="/chapter-7/9.html" class="sidebar-link">Rerere</a></li><li><a href="/chapter-7/10.html" class="sidebar-link">使用 Git 调试</a></li><li><a href="/chapter-7/11.html" class="sidebar-link">子模块</a></li><li><a href="/chapter-7/12.html" class="sidebar-link">打包</a></li><li><a href="/chapter-7/13.html" class="sidebar-link">替换</a></li><li><a href="/chapter-7/14.html" class="active sidebar-link">凭证存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/chapter-7/14.html#底层实现" class="sidebar-link">底层实现</a></li><li class="sidebar-sub-header"><a href="/chapter-7/14.html#自定义凭证缓存" class="sidebar-link">自定义凭证缓存</a></li></ul></li><li><a href="/chapter-7/15.html" class="sidebar-link">总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-8/" class="sidebar-heading clickable"><span>8. 自定义 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-9/" class="sidebar-heading clickable"><span>9. Git 与其他系统</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/chapter-10/" class="sidebar-heading clickable"><span>10. Git 内部原理</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-A/" class="sidebar-heading clickable"><span>附录 A. 在其它环境中使用 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-B/" class="sidebar-heading clickable"><span>附录 B. 在你的应用中嵌入 Git</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/appendix-C/" class="sidebar-heading clickable"><span>附录 C. Git 命令</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="凭证存储"><a href="#凭证存储" class="header-anchor">#</a> 凭证存储</h1> <p></p><p>如果你使用的是 SSH 方式连接远端，并且设置了一个没有口令的密钥，这样就可以在不输入用户名和密码的情况下安全地传输数据。
+然而，这对 HTTP 协议来说是不可能的 —— 每一个连接都是需要用户名和密码的。
+这在使用双重认证的情况下会更麻烦，因为你需要输入一个随机生成并且毫无规律的 token 作为密码。</p> <p>幸运的是，Git 拥有一个凭证系统来处理这个事情。
+下面有一些 Git 的选项：</p> <div class="itemized-list"><ul><li><span class="principal">默认所有都不缓存。
+每一次连接都会询问你的用户名和密码。</span></li> <li><span class="principal">“cache” 模式会将凭证存放在内存中一段时间。
+密码永远不会被存储在磁盘中，并且在15分钟后从内存中清除。</span></li> <li><span class="principal">“store” 模式会将凭证用明文的形式存放在磁盘中，并且永不过期。
+这意味着除非你修改了你在 Git 服务器上的密码，否则你永远不需要再次输入你的凭证信息。
+这种方式的缺点是你的密码是用明文的方式存放在你的 home 目录下。</span></li> <li><span class="principal">如果你使用的是 Mac，Git 还有一种 “osxkeychain” 模式，它会将凭证缓存到你系统用户的钥匙串中。
+这种方式将凭证存放在磁盘中，并且永不过期，但是是被加密的，这种加密方式与存放 HTTPS 凭证以及 Safari 的自动填写是相同的。</span></li> <li><span class="principal">如果你使用的是 Windows，你可以安装一个叫做 “Git Credential Manager for Windows” 的辅助工具。
+这和上面说的 “osxkeychain” 十分类似，但是是使用 Windows Credential Store 来控制敏感信息。
+可以在 <a href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows" class="link">https://github.com/Microsoft/Git-Credential-Manager-for-Windows</a> 下载。</span></li></ul></div> <p>你可以设置 Git 的配置来选择上述的一种方式</p><p></p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config --global credential.helper cache</code></pre> <p>部分辅助工具有一些选项。
+“store” 模式可以接受一个 <code class="literal">--file &lt;path&gt;</code> 参数，可以自定义存放密码的文件路径（默认是 <code class="literal">~/.git-credentials</code> ）。
+“cache” 模式有 <code class="literal">--timeout &lt;seconds&gt;</code> 参数，可以设置后台进程的存活时间（默认是 “900”，也就是 15 分钟）。
+下面是一个配置 “store” 模式自定义路径的例子：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config --global credential.helper <span style="font-style:italic;">'store --file ~/.my-credentials'</span></code></pre> <p>Git 甚至允许你配置多个辅助工具。
+当查找特定服务器的凭证时，Git 会按顺序查询，并且在找到第一个回答时停止查询。
+当保存凭证时，Git 会将用户名和密码发送给 <strong>所有</strong> 配置列表中的辅助工具，它们会按自己的方式处理用户名和密码。
+如果你在闪存上有一个凭证文件，但又希望在该闪存被拔出的情况下使用内存缓存来保存用户名密码，<code class="literal">.gitconfig</code> 配置文件如下：</p> <pre class="source language-ini"><code><span style="font-weight:bold;">[credential]</span>
+    helper = <span style="font-style:italic;">store --file /mnt/thumbdrive/.git-credentials</span>
+<span style="font-style:italic;">    helper = cache --timeout 30000</span></code></pre> <h2 id="底层实现"><a href="#底层实现" class="header-anchor">#</a> 底层实现</h2> <p>这些是如何实现的呢？
+Git 凭证辅助工具系统的命令是 <code class="literal">git credential</code>，这个命令接收一个参数，并通过标准输入获取更多的参数。</p> <p>举一个例子更容易理解。
+我们假设已经配置好一个凭证辅助工具，这个辅助工具保存了 <code class="literal">mygithost</code> 的凭证信息。
+下面是一个使用 “fill” 命令的会话，当 Git 尝试寻找一个服务器的凭证时就会被调用。</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git credential fill <i data-value="1" class="conum">①</i>
+protocol=https <i data-value="2" class="conum">②</i>
+host=mygithost
+ <i data-value="3" class="conum">③</i>
+protocol=https <i data-value="4" class="conum">④</i>
+host=mygithost
+username=bob
+password=s3cre7
+<span style="font-weight:bold;">$</span> git credential fill <i data-value="5" class="conum">⑤</i>
+protocol=https
+host=unknownhost
+
+Username for 'https://unknownhost': bob
+Password for 'https://bob@unknownhost':
+protocol=https
+host=unknownhost
+username=bob
+password=s3cre7</code></pre> <div class="callout-list"><ol><li><i data-value="1" class="conum">①</i> 这是开始交互的命令。</li> <li><i data-value="2" class="conum">②</i> Git-credential 接下来会等待标准输入。
+我们提供我们所知道的信息：协议和主机名。</li> <li><i data-value="3" class="conum">③</i> 一个空行代表输入已经完成，凭证系统应该输出它所知道的信息。</li> <li><i data-value="4" class="conum">④</i> 接下来由 Git-credential 接管，并且将找到的信息打印到标准输出。</li> <li><i data-value="5" class="conum">⑤</i> 如果没有找到对应的凭证，Git 会询问用户的用户名和密码，我们将这些信息输入到在标准输出的地方（这个例子中是同一个控制台）。</li></ol></div> <p>凭证系统实际调用的程序和 Git 本身是分开的；具体是哪一个以及如何调用与 <code class="literal">credential.helper</code> 配置的值有关。
+这个配置有多种格式：</p> <div class="table"><div class="content"><table class="table table-framed-topbot table-grid-rows" style="width:100%;"><colgroup><col> <col></colgroup> <thead><tr><th>配置值</th> <th>行为</th></tr></thead> <tbody><tr><td><p><code class="literal">foo</code></p></td> <td><p>执行 <code class="literal">git-credential-foo</code></p></td></tr> <tr><td><p><code class="literal">foo -a --opt=bcd</code></p></td> <td><p>执行 <code class="literal">git-credential-foo -a --opt=bcd</code></p></td></tr> <tr><td><p><code class="literal">/absolute/path/foo -xyz</code></p></td> <td><p>执行 <code class="literal">/absolute/path/foo -xyz</code></p></td></tr> <tr><td><p><code class="literal">!f() { echo &quot;password=s3cre7&quot;; }; f</code></p></td> <td><p><code class="literal">!</code> 后面的代码会在 shell 执行</p></td></tr></tbody></table></div></div> <p>上面描述的辅助工具可以被称做 <code class="literal">git-credential-cache</code>、<code class="literal">git-credential-store</code> 之类，我们可以配置它们来接受命令行参数。
+通常的格式是 “git-credential-foo [args] &lt;action&gt;”
+标准输入/输出协议和 git-credential 一样，但它们使用的是一套稍微不太一样的行为：</p> <div class="itemized-list"><ul><li><span class="principal"><code class="literal">get</code> 是请求输入一对用户名和密码。</span></li> <li><span class="principal"><code class="literal">store</code> 是请求保存一个凭证到辅助工具的内存。</span></li> <li><span class="principal"><code class="literal">erase</code> 会将给定的证书从辅助工具内存中清除。</span></li></ul></div> <p>对于 <code class="literal">store</code> 和 <code class="literal">erase</code> 两个行为是不需要返回数据的（Git 也会忽略掉）。
+然而对于 <code class="literal">get</code>，Git 对辅助工具的返回信息十分感兴趣。
+如果辅助工具并不知道任何有用的信息，它就会直接退出而没有任何输出，但如果知道的话，
+它就会在已存储信息的基础上扩充所提供的信息。
+它的输出可看做一系列赋值语句，提供的任何内容都会取代 Git 已知的内容。</p> <p>如果辅助工具没有任何有用的信息，它可以直接退出而不需要输出任何东西，但如果它有这些信息，它在提供的信息后面增加它所拥有的信息。
+这些输出会被视为一系列的赋值语句；每一个提供的数据都会将 Git 已有的数据替换掉。</p> <p>这有一个和上面一样的例子，但是跳过了 git-credential 这一步，直接到 git-credential-store:</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git credential-store --file ~/git.store store <i data-value="1" class="conum">①</i>
+protocol=https
+host=mygithost
+username=bob
+password=s3cre7
+<span style="font-weight:bold;">$</span> git credential-store --file ~/git.store get <i data-value="2" class="conum">②</i>
+protocol=https
+host=mygithost
+
+username=bob <i data-value="3" class="conum">③</i>
+password=s3cre7</code></pre> <div class="callout-list"><ol><li><i data-value="1" class="conum">①</i> 我们告诉 <code class="literal">git-credential-store</code> 去保存凭证：当访问 <code class="literal">https://mygithost</code> 时使用用户名 “bob”，密码是 “s3cre7”。</li> <li><i data-value="2" class="conum">②</i> 现在我们取出这个凭证。
+我们提供连接这部分的信息（<code class="literal">https://mygithost</code>）以及一个空行。</li> <li><i data-value="3" class="conum">③</i> <code class="literal">git-credential-store</code> 输出我们之前保存的用户名和密码。</li></ol></div> <p><code class="literal">~/git.store</code> 文件的内容类似：</p> <pre class="source language-ini"><code>https://bob:s3cre7@mygithost</code></pre> <p>仅仅是一系列包含凭证信息 URL 组成的行。
+<code class="literal">osxkeychain</code> 和 <code class="literal">wincred</code> 辅助工具使用它们后端存储的原生格式，而 <code class="literal">cache</code> 使用它的内存格式（其他进程无法读取）。</p> <h2 id="自定义凭证缓存"><a href="#自定义凭证缓存" class="header-anchor">#</a> 自定义凭证缓存</h2> <p>已经知道 <code class="literal">git-credential-store</code> 之类的是和 Git 是相互独立的程序，就不难理解 Git 凭证辅助工具可以是 <em>任意</em> 程序。
+虽然 Git 提供的辅助工具覆盖了大多数常见的使用场景，但并不能满足所有情况。
+比如，假设你的整个团队共享一些凭证，也许是在部署时使用。
+这些凭证是保存在一个共享目录里，由于这些凭证经常变更，所以你不想把它们复制到你自己的凭证仓库中。
+现有的辅助工具无法满足这种情况；来看看我们如何自己实现一个。
+这个程序应该拥有几个核心功能：</p> <div class="ordered-list arabic"><ol class="arabic"><li><span class="principal">我们唯一需要关注的行为是 <code class="literal">get</code>；<code class="literal">store</code> 和 <code class="literal">erase</code> 是写操作，所以当接受到这两个请求时我们直接退出即可。</span></li> <li><span class="principal">共享的凭证文件格式和 <code class="literal">git-credential-store</code> 使用的格式相同。</span></li> <li><span class="principal">凭证文件的路径一般是固定的，但我们应该允许用户传入一个自定义路径以防万一。</span></li></ol></div> <p>我们再一次使用 Ruby 来编写这个扩展，但只要 Git 能够执行最终的程序，任何语言都是可以的。
+这是我们的凭证辅助工具的完整代码：</p> <pre class="source language-ruby"><code><span style="font-style:italic;">#!/usr/bin/env ruby</span>
+
+require <span style="font-style:italic;">'optparse'</span>
+
+path = File.expand_path <span style="font-style:italic;">'~/.git-credentials'</span> <i data-value="1" class="conum">①</i>
+OptionParser.new <span style="font-weight:bold;">do</span> |opts|
+    opts.banner = <span style="font-style:italic;">'USAGE: git-credential-read-only [options] &lt;action&gt;'</span>
+    opts.on(<span style="font-style:italic;">'-f'</span>, <span style="font-style:italic;">'--file PATH'</span>, <span style="font-style:italic;">'Specify path for backing store'</span>) <span style="font-weight:bold;">do</span> |argpath|
+        path = File.expand_path argpath
+    <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span>.parse!
+
+exit(0) <span style="font-weight:bold;">unless</span> ARGV[0].downcase == <span style="font-style:italic;">'get'</span> <i data-value="2" class="conum">②</i>
+exit(0) <span style="font-weight:bold;">unless</span> File.exists? path
+
+known = {} <i data-value="3" class="conum">③</i>
+<span style="font-weight:bold;">while</span> line = STDIN.gets
+    <span style="font-weight:bold;">break</span> <span style="font-weight:bold;">if</span> line.strip == <span style="font-style:italic;">''</span>
+    k,v = line.strip.split <span style="font-style:italic;">'='</span>, 2
+    known[k] = v
+<span style="font-weight:bold;">end</span>
+
+File.readlines(path).each <span style="font-weight:bold;">do</span> |fileline| <i data-value="4" class="conum">④</i>
+    prot,user,pass,host = fileline.scan(<span style="font-style:italic;">/^(.*?):\/\/(.*?):(.*?)@(.*)$/</span>).first
+    <span style="font-weight:bold;">if</span> prot == known[<span style="font-style:italic;">'protocol'</span>] <span style="font-weight:bold;">and</span> host == known[<span style="font-style:italic;">'host'</span>] <span style="font-weight:bold;">and</span> user == known[<span style="font-style:italic;">'username'</span>] <span style="font-weight:bold;">then</span>
+        puts <span style="font-style:italic;">&quot;protocol=</span><span style="font-weight:bold;font-style:italic;">#{</span>prot<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+        puts <span style="font-style:italic;">&quot;host=</span><span style="font-weight:bold;font-style:italic;">#{</span>host<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+        puts <span style="font-style:italic;">&quot;username=</span><span style="font-weight:bold;font-style:italic;">#{</span>user<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+        puts <span style="font-style:italic;">&quot;password=</span><span style="font-weight:bold;font-style:italic;">#{</span>pass<span style="font-weight:bold;font-style:italic;">}</span><span style="font-style:italic;">&quot;</span>
+        exit(0)
+    <span style="font-weight:bold;">end</span>
+<span style="font-weight:bold;">end</span></code></pre> <div class="callout-list"><ol><li><i data-value="1" class="conum">①</i> 我们在这里解析命令行参数，允许用户指定输入文件，默认是 <code class="literal">~/.git-credentials</code>.</li> <li><i data-value="2" class="conum">②</i> 这个程序只有在接受到 <code class="literal">get</code> 行为的请求并且后端存储的文件存在时才会有输出。</li> <li><i data-value="3" class="conum">③</i> 这个循环从标准输入读取数据，直到读取到第一个空行。
+输入的数据被保存到 <code class="literal">known</code> 哈希表中，之后需要用到。</li> <li><i data-value="4" class="conum">④</i> 这个循环读取存储文件中的内容，寻找匹配的行。
+如果 <code class="literal">known</code> 中的协议和主机名与该行相匹配，这个程序输出结果并退出。</li></ol></div> <p>我们把这个辅助工具保存为 <code class="literal">git-credential-read-only</code>，放到我们的 <code class="literal">PATH</code> 路径下并且给予执行权限。
+一个交互式会话类似：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git credential-read-only --file=/mnt/shared/creds get
+protocol=https
+host=mygithost
+
+protocol=https
+host=mygithost
+username=bob
+password=s3cre7</code></pre> <p>由于这个的名字是 “git-” 开头，所以我们可以在配置值中使用简便的语法：</p> <pre class="language-bash"><code><span style="font-weight:bold;">$</span> git config --global credential.helper <span style="font-style:italic;">'read-only --file /mnt/shared/creds'</span></code></pre> <p>正如你看到的，扩展这个系统是相当简单的，并且可以为你和你的团队解决一些常见问题。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/chapter-7/13.html" class="prev">
+        替换
+      </a></span> <span class="next"><a href="/chapter-7/15.html">
+        总结
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e343c26e.js" defer></script><script src="/assets/js/2.c0327591.js" defer></script><script src="/assets/js/105.66c87d19.js" defer></script>
+  </body>
+</html>
